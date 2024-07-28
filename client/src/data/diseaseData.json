@@ -1,0 +1,1813 @@
+{
+  "pcos": {
+    "overview": {
+      "name": "PCOS",
+      "fullName": "Polycystic Ovary Syndrome",
+      "description": "Polycystic ovary syndrome (PCOS) is a hormonal disorder common among female individuals. It is characterized by hormonal imbalances that can lead to a variety of symptoms and health concerns.",
+      "quickFacts": [
+        {
+          "icon": "FaFemale",
+          "color": "#FF6B6B",
+          "text": "Ovarian Impact",
+          "details": "PCOS affects ovarian function, leading to irregular periods (oligomenorrhea or amenorrhea) and disruptions in the normal release of eggs from the ovaries."
+        },
+        {
+          "icon": "FaWeight",
+          "color": "#4ECDC4",
+          "text": "Metabolic Changes",
+          "details": "Many women with PCOS experience insulin resistance, which can lead to weight gain, difficulty losing weight, and an increased risk of type 2 diabetes."
+        },
+        {
+          "icon": "FaBaby",
+          "color": "#45B7D1",
+          "text": "Fertility Concerns",
+          "details": "PCOS is a common cause of infertility due to irregular ovulation. However, with proper management, including lifestyle changes and medical treatment, many women with PCOS can conceive."
+        },
+        {
+          "icon": "FaUserMd",
+          "color": "#FF8C94",
+          "text": "Physical Changes",
+          "details": "Hormonal imbalances in PCOS can lead to physical changes such as acne, excess facial and body hair (hirsutism), and male-pattern baldness (androgenic alopecia)."
+        },
+        {
+          "icon": "FaChartLine",
+          "color": "#98D8C8",
+          "text": "Hormone Imbalance",
+          "details": "PCOS involves elevated levels of androgens (male hormones) such as testosterone, and disruptions in hormones such as luteinizing hormone (LH) and follicle-stimulating hormone (FSH)."
+        },
+        {
+          "icon": "FaBrain",
+          "color": "#F3A712",
+          "text": "Mental Wellbeing",
+          "details": "Women with PCOS may experience mood disorders such as depression and anxiety, possibly due to hormonal fluctuations and the impact of symptoms on quality of life."
+        },
+        {
+          "icon": "FaHeartbeat",
+          "color": "#F78888",
+          "text": "Long-term Health",
+          "details": "PCOS is associated with long-term health risks including cardiovascular disease, endometrial cancer, and sleep apnea, highlighting the importance of proactive management."
+        }
+      ]
+    },
+    "promptTemplate": "Analyze the following data for PCOS risk and provide recommendations:\n\nAge: {age}\nHeight: {height} cm\nWeight: {weight} kg\nActive Symptoms: {symptoms}\nLifestyle Factors: {lifestyle}\n\nProvide a detailed analysis including:\n1. BMI calculation and category\n2. Risk level assessment (Low, Moderate, High)\n3. Lifestyle score (0-10)\n4. Specific recommendations based on the data\n\nFormat the response as a JSON object with the following structure:\n{\n  \"bmi\": { \"value\": number, \"status\": { \"text\": string, \"color\": string } },\n  \"riskLevel\": { \"text\": string, \"color\": string },\n  \"lifestyleScore\": number,\n  \"recommendations\": [string]\n}",
+    "calculator": {
+      "steps": [
+        { "title": "Basic Info", "icon": "FaUser", "color": "#FF69B4" },
+        { "title": "Symptoms", "icon": "FaNotesMedical", "color": "#FF0000" },
+        { "title": "Lifestyle", "icon": "FaHeartbeat", "color": "#00FF00" }
+      ],
+      "basicInfo": [
+        {
+          "name": "age",
+          "label": "Age",
+          "icon": "FaCalendarAlt",
+          "color": "#800080"
+        },
+        {
+          "name": "height",
+          "label": "Height (cm)",
+          "icon": "FaRulerVertical",
+          "color": "#0000FF"
+        },
+        {
+          "name": "weight",
+          "label": "Weight (kg)",
+          "icon": "FaWeight",
+          "color": "#008000"
+        }
+      ],
+      "symptoms": [
+        {
+          "name": "irregularPeriods",
+          "label": "Irregular Periods",
+          "icon": "FaCalendarCheck",
+          "color": "#F87171"
+        },
+        {
+          "name": "excessiveHairGrowth",
+          "label": "Excessive Hair Growth",
+          "icon": "FaUser",
+          "color": "#34D399"
+        },
+        {
+          "name": "acne",
+          "label": "Acne",
+          "icon": "FaAllergies",
+          "color": "#FBBF24"
+        },
+        {
+          "name": "weightGain",
+          "label": "Unexplained Weight Gain",
+          "icon": "FaWeightHanging",
+          "color": "#60A5FA"
+        },
+        {
+          "name": "moodSwings",
+          "label": "Mood Swings",
+          "icon": "FaSmileBeam",
+          "color": "#A78BFA"
+        }
+      ],
+      "lifestyle": [
+        {
+          "name": "fatigueLevel",
+          "label": "Fatigue Level",
+          "icon": "FaBatteryQuarter",
+          "color": "#FFFF00"
+        },
+        {
+          "name": "dietQuality",
+          "label": "Diet Quality",
+          "icon": "FaAppleAlt",
+          "color": "#00FF00"
+        },
+        {
+          "name": "stressLevel",
+          "label": "Stress Level",
+          "icon": "FaHeadSideMask",
+          "color": "#800080"
+        }
+      ]
+    },
+    "resources": [
+      {
+        "name": "PCOS Support Group",
+        "link": "#",
+        "icon": "FaUserFriends",
+        "category": "All",
+        "color": "#EF4444"
+      },
+      {
+        "name": "PCOS Nutrition Guide",
+        "link": "#",
+        "icon": "FaUtensils",
+        "category": "Articles",
+        "color": "#10B981"
+      },
+      {
+        "name": "PCOS and Fertility",
+        "link": "#",
+        "icon": "FaBaby",
+        "category": "Articles",
+        "color": "#8B5CF6"
+      },
+      {
+        "name": "Mental Health Resources",
+        "link": "#",
+        "icon": "FaBrain",
+        "category": "All",
+        "color": "#3B82F6"
+      },
+      {
+        "name": "Living with PCOS",
+        "link": "#",
+        "icon": "FaVideo",
+        "category": "Videos",
+        "color": "#EC4899"
+      },
+      {
+        "name": "PCOS Workout Routines",
+        "link": "#",
+        "icon": "FaRunning",
+        "category": "Videos",
+        "color": "#F59E0B"
+      },
+      {
+        "name": "PCOS Warrior Podcast",
+        "link": "#",
+        "icon": "FaPodcast",
+        "category": "Podcasts",
+        "color": "#6366F1"
+      },
+      {
+        "name": "Hormonal Balance Tips",
+        "link": "#",
+        "icon": "FaBalanceScale",
+        "category": "Articles",
+        "color": "#14B8A6"
+      }
+    ],
+    "recipeData": {
+      "title": "Breakfast Ideas for PCOS",
+      "youtubeQuery": "quick healthy breakfast recipes during menopause",
+      "recipes": [
+        { "name": "Overnight Oats" },
+        { "name": "Avocado Toast" },
+        { "name": "Smoothie Bowl" },
+        { "name": "Egg and Vegetable Scramble" },
+        { "name": "Chia Seed Pudding" },
+        { "name": "Greek Yogurt with Berries" }
+      ]
+    },
+    "mythsAndFAQs": {
+      "title": "PCOS Myths & FAQs",
+      "myths": [
+        {
+          "icon": "FaQuestionCircle",
+          "color": "#FF6B6B",
+          "question": "PCOS only affects overweight women",
+          "answer": "PCOS can affect women of all body types. While it's more common in overweight women, many with normal or low BMI also have PCOS."
+        },
+        {
+          "icon": "FaQuestionCircle",
+          "color": "#FF6B6B",
+          "question": "PCOS is caused by poor diet and lifestyle choices",
+          "answer": "While diet and lifestyle factors can influence PCOS symptoms, the exact cause of PCOS is not fully understood and likely involves a combination of genetic and environmental factors."
+        },
+        {
+          "icon": "FaQuestionCircle",
+          "color": "#FF6B6B",
+          "question": "All women with PCOS will develop diabetes",
+          "answer": "Women with PCOS have a higher risk of developing type 2 diabetes due to insulin resistance, but not every woman with PCOS will develop diabetes."
+        },
+        {
+          "icon": "FaQuestionCircle",
+          "color": "#FF6B6B",
+          "question": "PCOS can be cured with medication alone",
+          "answer": "While medication can help manage symptoms, PCOS is a chronic condition that typically requires ongoing lifestyle changes and medical management."
+        }
+      ],
+      "faqs": [
+        {
+          "icon": "FaBabyCarriage",
+          "color": "#4ECDC4",
+          "question": "Can I get pregnant if I have PCOS?",
+          "answer": "Yes, many women with PCOS can and do get pregnant. However, PCOS is a common cause of infertility. With proper treatment and lifestyle changes, the chances of conception can improve significantly."
+        },
+        {
+          "icon": "FaBabyCarriage",
+          "color": "#4ECDC4",
+          "question": "Does every woman with PCOS have cysts on her ovaries?",
+          "answer": "No, not every woman with PCOS has cysts on her ovaries. Diagnosis is based on a combination of symptoms, hormonal tests, and ultrasound findings."
+        },
+        {
+          "icon": "FaBabyCarriage",
+          "color": "#4ECDC4",
+          "question": "Is PCOS a lifelong condition?",
+          "answer": "PCOS is a chronic condition, but its symptoms can be managed effectively with lifestyle changes, medication, and ongoing medical care."
+        },
+        {
+          "icon": "FaBabyCarriage",
+          "color": "#4ECDC4",
+          "question": "Can PCOS be cured?",
+          "answer": "PCOS is not curable, but its symptoms can be managed through lifestyle changes, medication, and sometimes assisted reproductive technology."
+        },
+        {
+          "icon": "FaBabyCarriage",
+          "color": "#4ECDC4",
+          "question": "What are the dietary recommendations for PCOS?",
+          "answer": "A balanced diet that includes low-glycemic index carbohydrates, lean protein sources, and healthy fats is recommended for managing PCOS symptoms and improving overall health."
+        }
+      ],
+      "facts": [
+        {
+          "icon": "FaChartBar",
+          "color": "#10B981",
+          "question": "Prevalence",
+          "answer": "8-13% of women are affected by PCOS (World Health Organization (WHO))"
+        },
+        {
+          "icon": "FaFlask",
+          "color": "#6366F1",
+          "question": "Studies",
+          "answer": "Studies suggest improvement in symptoms with proper management (National Institutes of Health (NIH))"
+        },
+        {
+          "icon": "FaCarrot",
+          "color": "#F59E0B",
+          "question": "Diet Recommendations",
+          "answer": "Low-glycemic index carbs, lean protein, healthy fats are recommended (PCOS Foundation)"
+        },
+        {
+          "icon": "FaBan",
+          "color": "#EF4444",
+          "question": "Avoid Recommendations",
+          "answer": "Avoid processed foods, sugary drinks, and unhealthy fats (PCOS Foundation)"
+        },
+        {
+          "icon": "FaUserClock",
+          "color": "#6B7280",
+          "question": "Age Affected",
+          "answer": "PCOS commonly affects teenagers to early 40s (World Health Organization (WHO))"
+        },
+        {
+          "icon": "FaHeart",
+          "color": "#F472B6",
+          "text": "Common Symptoms",
+          "answer": "Irregular periods, weight gain, acne are common symptoms (World Health Organization (WHO))"
+        }
+      ]
+      
+    }
+    
+  },
+  
+    "ironDeficiencyAnemia": {
+      "overview": {
+        "name": "Iron-Deficiency Anemia",
+        "fullName": "Iron-Deficiency Anemia",
+        "description": "Iron-deficiency anemia is a common type of anemia — a condition in which blood lacks adequate healthy red blood cells. Red blood cells carry oxygen to the body's tissues. Iron-deficiency anemia occurs when your body doesn't have enough iron to produce hemoglobin, the part of red blood cells that gives blood its red color and enables the red blood cells to carry oxygenated blood throughout your body.",
+        "quickFacts": [
+          {
+            "icon": "FaTint",
+            "color": "#FF6B6B",
+            "text": "Blood Impact",
+            "details": "Iron-deficiency anemia affects the production of healthy red blood cells, leading to reduced oxygen-carrying capacity in the blood."
+          },
+          {
+            "icon": "FaTired",
+            "color": "#4ECDC4",
+            "text": "Fatigue",
+            "details": "One of the most common symptoms of iron-deficiency anemia is fatigue and weakness due to the body's cells not getting enough oxygen."
+          },
+          {
+            "icon": "FaHeartbeat",
+            "color": "#45B7D1",
+            "text": "Cardiovascular Effects",
+            "details": "The heart has to work harder to pump oxygen-rich blood throughout the body, which can lead to irregular heartbeats."
+          },
+          {
+            "icon": "FaUserMd",
+            "color": "#FF8C94",
+            "text": "Physical Changes",
+            "details": "People with iron-deficiency anemia may experience pale skin, brittle nails, and cold hands and feet."
+          },
+          {
+            "icon": "FaUtensils",
+            "color": "#98D8C8",
+            "text": "Dietary Factors",
+            "details": "Iron-deficiency anemia can often be prevented or treated by increasing iron intake through diet or supplements."
+          },
+          {
+            "icon": "FaBrain",
+            "color": "#F3A712",
+            "text": "Cognitive Effects",
+            "details": "Iron-deficiency anemia can affect cognitive function, leading to difficulty concentrating and decreased productivity."
+          },
+          {
+            "icon": "FaFemale",
+            "color": "#F78888",
+            "text": "Risk Factors",
+            "details": "Women of childbearing age, pregnant women, and people with certain gastrointestinal disorders are at higher risk for iron-deficiency anemia."
+          }
+        ]
+      },
+      "promptTemplate": "Analyze the following data for Iron-Deficiency Anemia risk and provide recommendations:\n\nAge: {age}\nHeight: {height} cm\nWeight: {weight} kg\nActive Symptoms: {symptoms}\nLifestyle Factors: {lifestyle}\n\nProvide a detailed analysis including:\n1. BMI calculation and category\n2. Risk level assessment (Low, Moderate, High)\n3. Lifestyle score (0-10)\n4. Specific recommendations based on the data\n\nFormat the response as a JSON object with the following structure:\n{\n  \"bmi\": { \"value\": number, \"status\": { \"text\": string, \"color\": string } },\n  \"riskLevel\": { \"text\": string, \"color\": string },\n  \"lifestyleScore\": number,\n  \"recommendations\": [string]\n}",
+      "calculator": {
+        "steps": [
+          { "title": "Basic Info", "icon": "FaUser", "color": "#FF69B4" },
+          { "title": "Symptoms", "icon": "FaNotesMedical", "color": "#FF0000" },
+          { "title": "Lifestyle", "icon": "FaHeartbeat", "color": "#00FF00" }
+        ],
+        "basicInfo": [
+          {
+            "name": "age",
+            "label": "Age",
+            "icon": "FaCalendarAlt",
+            "color": "#800080"
+          },
+          {
+            "name": "height",
+            "label": "Height (cm)",
+            "icon": "FaRulerVertical",
+            "color": "#0000FF"
+          },
+          {
+            "name": "weight",
+            "label": "Weight (kg)",
+            "icon": "FaWeight",
+            "color": "#008000"
+          }
+        ],
+        "symptoms": [
+          {
+            "name": "fatigue",
+            "label": "Fatigue",
+            "icon": "FaBed",
+            "color": "#F87171"
+          },
+          {
+            "name": "paleSkin",
+            "label": "Pale Skin",
+            "icon": "FaUser",
+            "color": "#34D399"
+          },
+          {
+            "name": "shortness of breath",
+            "label": "Shortness of Breath",
+            "icon": "FaLungs",
+            "color": "#FBBF24"
+          },
+          {
+            "name": "headaches",
+            "label": "Headaches",
+            "icon": "FaHeadSideMask",
+            "color": "#60A5FA"
+          },
+          {
+            "name": "dizziness",
+            "label": "Dizziness",
+            "icon": "FaDizzy",
+            "color": "#A78BFA"
+          }
+        ],
+        "lifestyle": [
+          {
+            "name": "dietQuality",
+            "label": "Diet Quality",
+            "icon": "FaAppleAlt",
+            "color": "#00FF00"
+          },
+          {
+            "name": "exerciseFrequency",
+            "label": "Exercise Frequency",
+            "icon": "FaRunning",
+            "color": "#FFFF00"
+          },
+          {
+            "name": "stressLevel",
+            "label": "Stress Level",
+            "icon": "FaHeadSideMask",
+            "color": "#800080"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "name": "Anemia Support Group",
+          "link": "#",
+          "icon": "FaUserFriends",
+          "category": "All",
+          "color": "#EF4444"
+        },
+        {
+          "name": "Iron-Rich Diet Guide",
+          "link": "#",
+          "icon": "FaUtensils",
+          "category": "Articles",
+          "color": "#10B981"
+        },
+        {
+          "name": "Anemia and Pregnancy",
+          "link": "#",
+          "icon": "FaBaby",
+          "category": "Articles",
+          "color": "#8B5CF6"
+        },
+        {
+          "name": "Managing Fatigue",
+          "link": "#",
+          "icon": "FaBed",
+          "category": "All",
+          "color": "#3B82F6"
+        },
+        {
+          "name": "Living with Anemia",
+          "link": "#",
+          "icon": "FaVideo",
+          "category": "Videos",
+          "color": "#EC4899"
+        },
+        {
+          "name": "Iron-Boosting Workouts",
+          "link": "#",
+          "icon": "FaDumbbell",
+          "category": "Videos",
+          "color": "#F59E0B"
+        },
+        {
+          "name": "Anemia Awareness Podcast",
+          "link": "#",
+          "icon": "FaPodcast",
+          "category": "Podcasts",
+          "color": "#6366F1"
+        },
+        {
+          "name": "Iron Absorption Tips",
+          "link": "#",
+          "icon": "FaListUl",
+          "category": "Articles",
+          "color": "#14B8A6"
+        }
+      ],
+      "recipeData": {
+        "title": "Iron-Rich Meal Ideas",
+        "youtubeQuery": "iron-rich recipes for anemia",
+        "recipes": [
+          { "name": "Spinach and Lentil Soup" },
+          { "name": "Beef and Broccoli Stir-Fry" },
+          { "name": "Quinoa and Black Bean Salad" },
+          { "name": "Grilled Chicken with Leafy Greens" },
+          { "name": "Fortified Cereal with Berries" },
+          { "name": "Tuna and Avocado Wrap" }
+        ]
+      },
+      "mythsAndFAQs": {
+        "title": "Iron-Deficiency Anemia Myths & FAQs",
+        "myths": [
+          {
+            "icon": "FaQuestionCircle",
+            "color": "#FF6B6B",
+            "question": "Only women get iron-deficiency anemia",
+            "answer": "While women are at higher risk, men can also develop iron-deficiency anemia, especially those with certain medical conditions or diets low in iron."
+          },
+          {
+            "icon": "FaQuestionCircle",
+            "color": "#FF6B6B",
+            "question": "Eating lots of spinach will cure anemia",
+            "answer": "While spinach is iron-rich, it contains non-heme iron which is less easily absorbed. A balanced diet with various iron sources and proper medical treatment is necessary."
+          },
+          {
+            "icon": "FaQuestionCircle",
+            "color": "#FF6B6B",
+            "question": "Iron supplements always cause constipation",
+            "answer": "While constipation can be a side effect, not everyone experiences it. There are different types of iron supplements, and some are less likely to cause constipation."
+          },
+          {
+            "icon": "FaQuestionCircle",
+            "color": "#FF6B6B",
+            "question": "Anemia is just tiredness and isn't serious",
+            "answer": "While fatigue is a common symptom, untreated anemia can lead to serious complications including heart problems and pregnancy complications."
+          }
+        ],
+        "faqs": [
+          {
+            "icon": "FaTint",
+            "color": "#4ECDC4",
+            "question": "How is iron-deficiency anemia diagnosed?",
+            "answer": "It's typically diagnosed through blood tests that measure hemoglobin levels, iron levels, and other factors related to red blood cell production."
+          },
+          {
+            "icon": "FaTint",
+            "color": "#4ECDC4",
+            "question": "Can iron-deficiency anemia be prevented?",
+            "answer": "In many cases, yes. Eating a diet rich in iron, taking iron supplements if recommended by a doctor, and addressing underlying causes can help prevent iron-deficiency anemia."
+          },
+          {
+            "icon": "FaTint",
+            "color": "#4ECDC4",
+            "question": "How long does it take to recover from iron-deficiency anemia?",
+            "answer": "With proper treatment, symptoms often improve within a few weeks, but it may take several months to replenish iron stores completely."
+          },
+          {
+            "icon": "FaTint",
+            "color": "#4ECDC4",
+            "question": "Can you have too much iron?",
+            "answer": "Yes, iron overload can be harmful. Always consult with a healthcare provider before starting iron supplements."
+          },
+          {
+            "icon": "FaTint",
+            "color": "#4ECDC4",
+            "question": "What foods are high in iron?",
+            "answer": "Red meat, poultry, fish, beans, lentils, tofu, fortified cereals, and dark leafy greens are good sources of iron."
+          }
+        ],
+        "facts": [
+  {
+    "icon": "FaChartBar",
+    "color": "#10B981",
+    "question": "Prevalence",
+    "answer": "Up to 20% of premenopausal women worldwide are affected by iron-deficiency anemia"
+  },
+  {
+    "icon": "FaFlask",
+    "color": "#6366F1",
+    "question": "Treatment Effectiveness",
+    "answer": "Iron-deficiency anemia can be significantly improved with proper treatment"
+  },
+  {
+    "icon": "FaCarrot",
+    "color": "#F59E0B",
+    "question": "Diet Recommendations",
+    "answer": "Consume iron-rich foods (red meat, poultry, fish, beans, lentils, fortified cereals, dark leafy greens) with vitamin C sources (fruits, vegetables) to enhance absorption"
+  },
+  {
+    "icon": "FaBan",
+    "color": "#EF4444",
+    "question": "Avoid Recommendations",
+    "answer": "Limit calcium-rich foods (dairy, coffee/tea) with meals, as they can inhibit iron absorption"
+  },
+  {
+    "icon": "FaUserClock",
+    "color": "#6B7280",
+    "question": "Age Affected",
+    "answer": "Can affect any age, but more common during menstruation, pregnancy, and breastfeeding"
+  },
+  {
+    "icon": "FaHeart",
+    "color": "#F472B6",
+    "text": "Common Symptoms",
+    "answer": "Fatigue, weakness, shortness of breath, pale skin, cold hands/feet"
+  }
+]
+
+    }
+  
+  },
+"bcancer": {
+  "overview": {
+    "name": "Breast Cancer",
+    "fullName": "Breast Cancer",
+    "description": "Breast cancer is a type of cancer that forms in the cells of the breasts. It can occur in both women and men, but it's far more common in women. Breast cancer survival rates have increased, and the number of deaths associated with this disease is steadily declining, largely due to factors such as earlier detection, a new personalized approach to treatment and a better understanding of the disease.",
+    "quickFacts": [
+      {
+        "icon": "FaFemale",
+        "color": "#FF6B6B",
+        "text": "Gender Impact",
+        "details": "While breast cancer can occur in both men and women, it's far more common in women. About 1 in 8 women will develop invasive breast cancer over the course of her lifetime."
+      },
+      {
+        "icon": "FaDna",
+        "color": "#4ECDC4",
+        "text": "Genetic Factors",
+        "details": "About 5-10% of breast cancers are thought to be hereditary, caused by abnormal genes passed from parent to child."
+      },
+      {
+        "icon": "FaCalendarAlt",
+        "color": "#45B7D1",
+        "text": "Age Risk",
+        "details": "The risk of breast cancer increases with age. About two of three invasive breast cancers are found in women 55 or older."
+      },
+      {
+        "icon": "FaWeight",
+        "color": "#FF8C94",
+        "text": "Lifestyle Factors",
+        "details": "Maintaining a healthy weight, staying physically active, and limiting alcohol consumption can help reduce the risk of breast cancer."
+      },
+      {
+        "icon": "FaHandHoldingHeart",
+        "color": "#98D8C8",
+        "text": "Early Detection",
+        "details": "Regular screenings, including mammograms and self-exams, are crucial for early detection and improved treatment outcomes."
+      },
+      {
+        "icon": "FaPills",
+        "color": "#F3A712",
+        "text": "Treatment Options",
+        "details": "Treatment for breast cancer may include surgery, radiation therapy, chemotherapy, hormone therapy, and targeted therapy, often used in combination."
+      },
+      {
+        "icon": "FaHeartbeat",
+        "color": "#F78888",
+        "text": "Survivorship",
+        "details": "Thanks to improvements in treatment and early detection, millions of women are surviving breast cancer today."
+      }
+    ]
+  },
+  "promptTemplate": "Analyze the following data for Breast Cancer risk and provide recommendations:\n\nAge: {age}\nHeight: {height} cm\nWeight: {weight} kg\nActive Symptoms: {symptoms}\nLifestyle Factors: {lifestyle}\n\nProvide a detailed analysis including:\n1. BMI calculation and category\n2. Risk level assessment (Low, Moderate, High)\n3. Lifestyle score (0-10)\n4. Specific recommendations based on the data\n\nFormat the response as a JSON object with the following structure:\n{\n  \"bmi\": { \"value\": number, \"status\": { \"text\": string, \"color\": string } },\n  \"riskLevel\": { \"text\": string, \"color\": string },\n  \"lifestyleScore\": number,\n  \"recommendations\": [string]\n}",
+  "calculator": {
+    "steps": [
+      { "title": "Basic Info", "icon": "FaUser", "color": "#FF69B4" },
+      { "title": "Symptoms", "icon": "FaNotesMedical", "color": "#FF0000" },
+      { "title": "Lifestyle", "icon": "FaHeartbeat", "color": "#00FF00" }
+    ],
+    "basicInfo": [
+      {
+        "name": "age",
+        "label": "Age",
+        "icon": "FaCalendarAlt",
+        "color": "#800080"
+      },
+      {
+        "name": "height",
+        "label": "Height (cm)",
+        "icon": "FaRulerVertical",
+        "color": "#0000FF"
+      },
+      {
+        "name": "weight",
+        "label": "Weight (kg)",
+        "icon": "FaWeight",
+        "color": "#008000"
+      }
+    ],
+    "symptoms": [
+      {
+        "name": "lump",
+        "label": "Breast Lump or Thickening",
+        "icon": "FaCircle",
+        "color": "#F87171"
+      },
+      {
+        "name": "skinChanges",
+        "label": "Breast Skin Changes",
+        "icon": "FaHandPaper",
+        "color": "#34D399"
+      },
+      {
+        "name": "nippleChanges",
+        "label": "Nipple Changes",
+        "icon": "FaDotCircle",
+        "color": "#FBBF24"
+      },
+      {
+        "name": "pain",
+        "label": "Breast Pain",
+        "icon": "FaBolt",
+        "color": "#60A5FA"
+      },
+      {
+        "name": "discharge",
+        "label": "Nipple Discharge",
+        "icon": "FaTint",
+        "color": "#A78BFA"
+      }
+    ],
+    "lifestyle": [
+      {
+        "name": "alcoholConsumption",
+        "label": "Alcohol Consumption",
+        "icon": "FaWineGlass",
+        "color": "#FFFF00"
+      },
+      {
+        "name": "physicalActivity",
+        "label": "Physical Activity",
+        "icon": "FaRunning",
+        "color": "#00FF00"
+      },
+      {
+        "name": "dietQuality",
+        "label": "Diet Quality",
+        "icon": "FaAppleAlt",
+        "color": "#800080"
+      }
+    ]
+  },
+  "resources": [
+    {
+      "name": "Breast Cancer Support Group",
+      "link": "#",
+      "icon": "FaUserFriends",
+      "category": "All",
+      "color": "#EF4444"
+    },
+    {
+      "name": "Breast Cancer Nutrition Guide",
+      "link": "#",
+      "icon": "FaUtensils",
+      "category": "Articles",
+      "color": "#10B981"
+    },
+    {
+      "name": "Breast Cancer and Genetics",
+      "link": "#",
+      "icon": "FaDna",
+      "category": "Articles",
+      "color": "#8B5CF6"
+    },
+    {
+      "name": "Coping with Diagnosis",
+      "link": "#",
+      "icon": "FaHeart",
+      "category": "All",
+      "color": "#3B82F6"
+    },
+    {
+      "name": "Understanding Treatment Options",
+      "link": "#",
+      "icon": "FaVideo",
+      "category": "Videos",
+      "color": "#EC4899"
+    },
+    {
+      "name": "Exercise After Breast Cancer",
+      "link": "#",
+      "icon": "FaDumbbell",
+      "category": "Videos",
+      "color": "#F59E0B"
+    },
+    {
+      "name": "Breast Cancer Survivor Stories",
+      "link": "#",
+      "icon": "FaPodcast",
+      "category": "Podcasts",
+      "color": "#6366F1"
+    },
+    {
+      "name": "Self-Exam Techniques",
+      "link": "#",
+      "icon": "FaHandPaper",
+      "category": "Articles",
+      "color": "#14B8A6"
+    }
+  ],
+  "recipeData": {
+    "title": "Healthy Recipes for Breast Cancer Prevention",
+    "youtubeQuery": "healthy recipes for breast cancer prevention",
+    "recipes": [
+      { "name": "Cruciferous Vegetable Stir-Fry" },
+      { "name": "Berry and Flaxseed Smoothie" },
+      { "name": "Grilled Salmon with Turmeric" },
+      { "name": "Lentil and Vegetable Soup" },
+      { "name": "Green Tea Infused Oatmeal" },
+      { "name": "Tomato and Garlic Pasta" }
+    ]
+  },
+  "mythsAndFAQs": {
+    "title": "Breast Cancer Myths & FAQs",
+    "myths": [
+      {
+        "icon": "FaQuestionCircle",
+        "color": "#FF6B6B",
+        "question": "Only women with a family history of breast cancer are at risk",
+        "answer": "While family history increases risk, about 85% of breast cancers occur in women who have no family history of breast cancer."
+      },
+      {
+        "icon": "FaQuestionCircle",
+        "color": "#FF6B6B",
+        "question": "Wearing an underwire bra increases breast cancer risk",
+        "answer": "There is no scientific evidence to support the claim that wearing any type of bra increases breast cancer risk."
+      },
+      {
+        "icon": "FaQuestionCircle",
+        "color": "#FF6B6B",
+        "question": "Breast implants can raise your cancer risk",
+        "answer": "There's no evidence linking standard breast implants to an increased risk of breast cancer."
+      },
+      {
+        "icon": "FaQuestionCircle",
+        "color": "#FF6B6B",
+        "question": "All breast lumps are cancerous",
+        "answer": "Most breast lumps are not cancerous. However, all lumps should be checked by a healthcare professional."
+      }
+    ],
+    "faqs": [
+      {
+        "icon": "FaStethoscope",
+        "color": "#4ECDC4",
+        "question": "How often should I have a mammogram?",
+        "answer": "The American Cancer Society recommends yearly mammograms starting at age 45 and the option to start at 40. Women 55 and older can switch to mammograms every 2 years."
+      },
+      {
+        "icon": "FaStethoscope",
+        "color": "#4ECDC4",
+        "question": "Can men get breast cancer?",
+        "answer": "Yes, although it's rare. About 1% of all breast cancers occur in men."
+      },
+      {
+        "icon": "FaStethoscope",
+        "color": "#4ECDC4",
+        "question": "Does a family history of breast cancer guarantee I'll get it?",
+        "answer": "No, a family history increases your risk but doesn't guarantee you'll develop breast cancer."
+      },
+      {
+        "icon": "FaStethoscope",
+        "color": "#4ECDC4",
+        "question": "Are there different types of breast cancer?",
+        "answer": "Yes, there are several types of breast cancer, including ductal carcinoma in situ, invasive ductal carcinoma, and invasive lobular carcinoma, among others."
+      },
+      {
+        "icon": "FaStethoscope",
+        "color": "#4ECDC4",
+        "question": "Can lifestyle changes reduce breast cancer risk?",
+        "answer": "Yes, maintaining a healthy weight, regular exercise, limiting alcohol, and not smoking can help reduce breast cancer risk."
+      }
+    ],
+   "facts": [
+  {
+    "icon": "FaChartBar",
+    "color": "#10B981",
+    "question": "Lifetime Risk",
+    "answer": "Breast cancer lifetime risk is 12.5% in the US (Source: American Cancer Society)"
+  },
+  {
+    "icon": "FaRunning",
+    "color": "#6366F1",
+    "question": "Physical Activity",
+    "answer": "Regular physical activity may offer some protection against breast cancer (Source: American Cancer Society)"
+  },
+  {
+    "icon": "FaCarrot",
+    "color": "#F59E0B",
+    "question": "Diet Recommendations",
+    "answer": "Balanced diet with fruits, vegetables, whole grains; limit processed foods, red meat, sugary drinks; maintain healthy weight (Source: American Cancer Society)"
+  },
+  {
+    "icon": "FaBan",
+    "color": "#EF4444",
+    "question": "Foods to Limit",
+    "answer": "No single food to avoid, but limit processed foods, red meat, sugary drinks (Source: American Cancer Society)"
+  },
+  {
+    "icon": "FaUserClock",
+    "color": "#6B7280",
+    "question": "Age Risk",
+    "answer": "Risk increases with age, most breast cancers diagnosed in women over 50 (Source: American Cancer Society)"
+  },
+  {
+    "icon": "FaExclamationTriangle",
+    "color": "#F472B6",
+    "text": "Common Symptoms",
+    "answer": "Lump in breast/armpit, breast shape/size changes, nipple discharge, skin changes (Source: Mayo Clinic)"
+  },
+  {
+    "icon": "FaUsers",
+    "color": "#8B5CF6",
+    "text": "Racial Disparities",
+    "answer": "Breast cancer death rates are highest for Black women (Source: American Cancer Society)"
+  }
+]
+  }
+},
+"thyroidDisorder": {
+  "overview": {
+    "name": "Thyroid Disorder",
+    "fullName": "Thyroid Disorder",
+    "description": "Thyroid disorders are conditions that affect the thyroid gland, a butterfly-shaped gland in the front of the neck. The thyroid produces hormones that regulate metabolism, body temperature, and other vital functions. Thyroid disorders can range from an enlarged gland without any serious consequences to life-threatening cancer.",
+    "quickFacts": [
+      {
+        "icon": "FaThermometerHalf",
+        "color": "#FF6B6B",
+        "text": "Metabolic Impact",
+        "details": "Thyroid hormones play a crucial role in regulating metabolism, affecting energy levels, weight, and body temperature."
+      },
+      {
+        "icon": "FaWeight",
+        "color": "#4ECDC4",
+        "text": "Weight Changes",
+        "details": "Unexplained weight gain or loss can be a sign of thyroid dysfunction, with hypothyroidism often causing weight gain and hyperthyroidism causing weight loss."
+      },
+      {
+        "icon": "FaTired",
+        "color": "#45B7D1",
+        "text": "Fatigue",
+        "details": "Both hypothyroidism and hyperthyroidism can cause fatigue, but for different reasons. Hypothyroidism slows bodily functions, while hyperthyroidism can lead to insomnia and restlessness."
+      },
+      {
+        "icon": "FaFemale",
+        "color": "#FF8C94",
+        "text": "Gender Prevalence",
+        "details": "Women are more likely to develop thyroid disorders than men, especially after pregnancy and during menopause."
+      },
+      {
+        "icon": "FaDna",
+        "color": "#98D8C8",
+        "text": "Genetic Factors",
+        "details": "There is often a genetic component to thyroid disorders, with a higher risk if family members have thyroid issues."
+      },
+      {
+        "icon": "FaBrain",
+        "color": "#F3A712",
+        "text": "Mood Changes",
+        "details": "Thyroid disorders can affect mood, potentially causing depression in hypothyroidism or anxiety in hyperthyroidism."
+      },
+      {
+        "icon": "FaHeartbeat",
+        "color": "#F78888",
+        "text": "Cardiovascular Effects",
+        "details": "Thyroid dysfunction can affect heart rate and blood pressure, with hypothyroidism potentially leading to high cholesterol and hyperthyroidism causing rapid heartbeat."
+      }
+    ]
+  },
+  "promptTemplate": "Analyze the following data for Thyroid Disorder risk and provide recommendations:\n\nAge: {age}\nHeight: {height} cm\nWeight: {weight} kg\nActive Symptoms: {symptoms}\nLifestyle Factors: {lifestyle}\n\nProvide a detailed analysis including:\n1. BMI calculation and category\n2. Risk level assessment (Low, Moderate, High)\n3. Lifestyle score (0-10)\n4. Specific recommendations based on the data\n\nFormat the response as a JSON object with the following structure:\n{\n  \"bmi\": { \"value\": number, \"status\": { \"text\": string, \"color\": string } },\n  \"riskLevel\": { \"text\": string, \"color\": string },\n  \"lifestyleScore\": number,\n  \"recommendations\": [string]\n}",
+  "calculator": {
+    "steps": [
+      { "title": "Basic Info", "icon": "FaUser", "color": "#FF69B4" },
+      { "title": "Symptoms", "icon": "FaNotesMedical", "color": "#FF0000" },
+      { "title": "Lifestyle", "icon": "FaHeartbeat", "color": "#00FF00" }
+    ],
+    "basicInfo": [
+      {
+        "name": "age",
+        "label": "Age",
+        "icon": "FaCalendarAlt",
+        "color": "#800080"
+      },
+      {
+        "name": "height",
+        "label": "Height (cm)",
+        "icon": "FaRulerVertical",
+        "color": "#0000FF"
+      },
+      {
+        "name": "weight",
+        "label": "Weight (kg)",
+        "icon": "FaWeight",
+        "color": "#008000"
+      }
+    ],
+    "symptoms": [
+      {
+        "name": "fatigue",
+        "label": "Fatigue",
+        "icon": "FaBed",
+        "color": "#F87171"
+      },
+      {
+        "name": "weightChanges",
+        "label": "Unexplained Weight Changes",
+        "icon": "FaBalanceScale",
+        "color": "#34D399"
+      },
+      {
+        "name": "neckSwelling",
+        "label": "Neck Swelling",
+        "icon": "FaUserMd",
+        "color": "#FBBF24"
+      },
+      {
+        "name": "moodChanges",
+        "label": "Mood Changes",
+        "icon": "FaSmile",
+        "color": "#60A5FA"
+      },
+      {
+        "name": "temperatureSensitivity",
+        "label": "Temperature Sensitivity",
+        "icon": "FaThermometerHalf",
+        "color": "#A78BFA"
+      }
+    ],
+    "lifestyle": [
+      {
+        "name": "dietQuality",
+        "label": "Diet Quality",
+        "icon": "FaAppleAlt",
+        "color": "#00FF00"
+      },
+      {
+        "name": "stressLevel",
+        "label": "Stress Level",
+        "icon": "FaHeadSideMask",
+        "color": "#FFFF00"
+      },
+      {
+        "name": "iodineIntake",
+        "label": "Iodine Intake",
+        "icon": "FaSyringe",
+        "color": "#800080"
+      }
+    ]
+  },
+  "resources": [
+    {
+      "name": "Thyroid Support Group",
+      "link": "#",
+      "icon": "FaUserFriends",
+      "category": "All",
+      "color": "#EF4444"
+    },
+    {
+      "name": "Thyroid Diet Guide",
+      "link": "#",
+      "icon": "FaUtensils",
+      "category": "Articles",
+      "color": "#10B981"
+    },
+    {
+      "name": "Thyroid and Pregnancy",
+      "link": "#",
+      "icon": "FaBaby",
+      "category": "Articles",
+      "color": "#8B5CF6"
+    },
+    {
+      "name": "Managing Thyroid Fatigue",
+      "link": "#",
+      "icon": "FaBed",
+      "category": "All",
+      "color": "#3B82F6"
+    },
+    {
+      "name": "Understanding Thyroid Tests",
+      "link": "#",
+      "icon": "FaVideo",
+      "category": "Videos",
+      "color": "#EC4899"
+    },
+    {
+      "name": "Exercise with Thyroid Disorders",
+      "link": "#",
+      "icon": "FaRunning",
+      "category": "Videos",
+      "color": "#F59E0B"
+    },
+    {
+      "name": "Thyroid Health Podcast",
+      "link": "#",
+      "icon": "FaPodcast",
+      "category": "Podcasts",
+      "color": "#6366F1"
+    },
+    {
+      "name": "Iodine in Your Diet",
+      "link": "#",
+      "icon": "FaListUl",
+      "category": "Articles",
+      "color": "#14B8A6"
+    }
+  ],
+  "recipeData": {
+    "title": "Thyroid-Friendly Meal Ideas",
+    "youtubeQuery": "thyroid-friendly recipes",
+    "recipes": [
+      { "name": "Iodine-Rich Seaweed Salad" },
+      { "name": "Selenium-Packed Brazil Nut Snack" },
+      { "name": "Zinc-Boosting Oyster Stew" },
+      { "name": "Tyrosine-Rich Egg and Spinach Breakfast" },
+      { "name": "Antioxidant Berry Smoothie" },
+      { "name": "Omega-3 Rich Salmon with Broccoli" }
+    ]
+  },
+  "mythsAndFAQs": {
+    "title": "Thyroid Disorder Myths & FAQs",
+    "myths": [
+      {
+        "icon": "FaQuestionCircle",
+        "color": "#FF6B6B",
+        "question": "Only older people get thyroid disorders",
+        "answer": "Thyroid disorders can affect people of all ages, including children and young adults."
+      },
+      {
+        "icon": "FaQuestionCircle",
+        "color": "#FF6B6B",
+        "question": "Thyroid problems always cause weight gain",
+        "answer": "While hypothyroidism can cause weight gain, hyperthyroidism can lead to weight loss. Not all thyroid issues affect weight significantly."
+      },
+      {
+        "icon": "FaQuestionCircle",
+        "color": "#FF6B6B",
+        "question": "You can't eat soy if you have thyroid issues",
+        "answer": "Moderate soy consumption is generally safe for most people with thyroid disorders, but it's best to consult with a healthcare provider."
+      },
+      {
+        "icon": "FaQuestionCircle",
+        "color": "#FF6B6B",
+        "question": "Natural thyroid supplements are better than prescription medications",
+        "answer": "Prescription thyroid medications are carefully regulated and more reliable than many natural supplements. Always consult with a doctor before taking any thyroid medication."
+      }
+    ],
+    "faqs": [
+      {
+        "icon": "FaStethoscope",
+        "color": "#4ECDC4",
+        "question": "How is thyroid disorder diagnosed?",
+        "answer": "Thyroid disorders are typically diagnosed through blood tests that measure thyroid hormone levels, along with a physical exam and review of symptoms."
+      },
+      {
+        "icon": "FaStethoscope",
+        "color": "#4ECDC4",
+        "question": "Can thyroid disorders be cured?",
+        "answer": "Many thyroid disorders can be well-managed with proper treatment, but most are chronic conditions that require ongoing care."
+      },
+      {
+        "icon": "FaStethoscope",
+        "color": "#4ECDC4",
+        "question": "How does diet affect thyroid function?",
+        "answer": "Diet can impact thyroid function, particularly iodine intake. A balanced diet with adequate iodine, selenium, and zinc is important for thyroid health."
+      },
+      {
+        "icon": "FaStethoscope",
+        "color": "#4ECDC4",
+        "question": "Can stress cause thyroid problems?",
+        "answer": "While stress doesn't directly cause thyroid disorders, it can exacerbate symptoms and affect overall health, potentially impacting thyroid function."
+      },
+      {
+        "icon": "FaStethoscope",
+        "color": "#4ECDC4",
+        "question": "Are thyroid disorders hereditary?",
+        "answer": "There is often a genetic component to thyroid disorders, meaning they can run in families. However, environmental factors also play a role."
+      }
+    ],
+    "facts": [
+      {
+        "icon": "FaChartBar",
+        "color": "#10B981",
+        "question": "Prevalence",
+        "answer": "An estimated 20 million Americans have some form of thyroid disease (Source: American Thyroid Association)"
+      },
+      {
+        "icon": "FaFlask",
+        "color": "#6366F1",
+        "question": "Common Types",
+        "answer": "Hypothyroidism and hyperthyroidism are the most common thyroid disorders (Source: Mayo Clinic)"
+      },
+      {
+        "icon": "FaCarrot",
+        "color": "#F59E0B",
+        "question": "Diet Recommendations",
+        "answer": "Balanced diet with adequate iodine, selenium, and zinc; limit processed foods (Source: American Thyroid Association)"
+      },
+      {
+        "icon": "FaBan",
+        "color": "#EF4444",
+        "question": "Foods to Limit",
+        "answer": "Excessive amounts of soy and cruciferous vegetables may interfere with thyroid function in some cases (Source: Mayo Clinic)"
+      },
+      {
+        "icon": "FaUserClock",
+        "color": "#6B7280",
+        "question": "Age and Gender",
+        "answer": "Thyroid disorders can occur at any age.Women are 5-8 times more likely to develop thyroid problems than men. (Source: American Thyroid Association)"
+      },
+      {
+        "icon": "FaHeartbeat",
+        "color": "#F472B6",
+        "text": "Common Symptoms",
+        "answer": "Fatigue, weight changes, mood swings, sensitivity to cold or heat (Source: American Thyroid Association)"
+      }
+    ]
+  }
+},
+"uti": {
+  "overview": {
+    "name": "UTI",
+    "fullName": "Urinary Tract Infection",
+    "description": "A urinary tract infection (UTI) is an infection in any part of your urinary system — your kidneys, ureters, bladder and urethra. Most infections involve the lower urinary tract — the bladder and the urethra. Women are at greater risk of developing a UTI than men.",
+    "quickFacts": [
+      {
+        "icon": "FaFemale",
+        "color": "#FF6B6B",
+        "text": "Gender Impact",
+        "details": "Women are more prone to UTIs than men due to their anatomy. The urethra is shorter in women, allowing bacteria easier access to the bladder."
+      },
+      {
+        "icon": "FaBacteria",
+        "color": "#4ECDC4",
+        "text": "Common Cause",
+        "details": "E. coli, a type of bacteria commonly found in the gastrointestinal tract, causes most UTIs."
+      },
+      {
+        "icon": "FaToilet",
+        "color": "#45B7D1",
+        "text": "Frequent Urination",
+        "details": "A strong, persistent urge to urinate and a burning sensation when urinating are common symptoms of a UTI."
+      },
+      {
+        "icon": "FaTint",
+        "color": "#FF8C94",
+        "text": "Urine Changes",
+        "details": "Urine that appears cloudy or red, bright pink or cola-colored (a sign of blood in the urine) can indicate a UTI."
+      },
+      {
+        "icon": "FaPills",
+        "color": "#98D8C8",
+        "text": "Treatment",
+        "details": "Antibiotics are the typical treatment for UTIs, but the type and duration depend on the symptoms and medical history."
+      },
+      {
+        "icon": "FaGlassWhiskey",
+        "color": "#F3A712",
+        "text": "Prevention",
+        "details": "Drinking plenty of water and urinating after sexual intercourse can help prevent UTIs."
+      },
+      {
+        "icon": "FaExclamationTriangle",
+        "color": "#F78888",
+        "text": "Complications",
+        "details": "If left untreated, a UTI can lead to more serious conditions affecting the kidneys."
+      }
+    ]
+  },
+  "promptTemplate": "Analyze the following data for UTI risk and provide recommendations:\n\nAge: {age}\nGender: {gender}\nActive Symptoms: {symptoms}\nLifestyle Factors: {lifestyle}\n\nProvide a detailed analysis including:\n1. Risk level assessment (Low, Moderate, High)\n2. Lifestyle score (0-10)\n3. Specific recommendations based on the data\n\nFormat the response as a JSON object with the following structure:\n{\n  \"riskLevel\": { \"text\": string, \"color\": string },\n  \"lifestyleScore\": number,\n  \"recommendations\": [string]\n}",
+  "calculator": {
+    "steps": [
+      { "title": "Basic Info", "icon": "FaUser", "color": "#FF69B4" },
+      { "title": "Symptoms", "icon": "FaNotesMedical", "color": "#FF0000" },
+      { "title": "Lifestyle", "icon": "FaHeartbeat", "color": "#00FF00" }
+    ],
+    "basicInfo": [
+      {
+        "name": "age",
+        "label": "Age",
+        "icon": "FaCalendarAlt",
+        "color": "#800080"
+      },
+      {
+        "name": "height",
+        "label": "Height (cm)",
+        "icon": "FaRulerVertical",
+        "color": "#0000FF"
+      },
+      {
+        "name": "weight",
+        "label": "Weight (kg)",
+        "icon": "FaWeight",
+        "color": "#008000"
+      }
+    ],
+    "symptoms": [
+      {
+        "name": "frequentUrination",
+        "label": "Frequent Urination",
+        "icon": "FaToilet",
+        "color": "#F87171"
+      },
+      {
+        "name": "burningUrination",
+        "label": "Burning Sensation When Urinating",
+        "icon": "FaFire",
+        "color": "#34D399"
+      },
+      {
+        "name": "cloudyUrine",
+        "label": "Cloudy Urine",
+        "icon": "FaTint",
+        "color": "#FBBF24"
+      },
+      {
+        "name": "pelvicPain",
+        "label": "Pelvic Pain",
+        "icon": "FaBolt",
+        "color": "#60A5FA"
+      },
+      {
+        "name": "bloodUrine",
+        "label": "Blood in Urine",
+        "icon": "FaTint",
+        "color": "#A78BFA"
+      }
+    ],
+    "lifestyle": [
+      {
+        "name": "waterIntake",
+        "label": "Daily Water Intake",
+        "icon": "FaGlassWhiskey",
+        "color": "#00FF00"
+      },
+      {
+        "name": "personalHygiene",
+        "label": "Personal Hygiene Habits",
+        "icon": "FaShower",
+        "color": "#FFFF00"
+      },
+      {
+        "name": "sexualActivity",
+        "label": "Sexual Activity",
+        "icon": "FaHeart",
+        "color": "#800080"
+      }
+    ]
+  },
+  "resources": [
+    {
+      "name": "UTI Support Group",
+      "link": "#",
+      "icon": "FaUserFriends",
+      "category": "All",
+      "color": "#EF4444"
+    },
+    {
+      "name": "UTI Prevention Tips",
+      "link": "#",
+      "icon": "FaShieldAlt",
+      "category": "Articles",
+      "color": "#10B981"
+    },
+    {
+      "name": "UTIs and Pregnancy",
+      "link": "#",
+      "icon": "FaBaby",
+      "category": "Articles",
+      "color": "#8B5CF6"
+    },
+    {
+      "name": "Managing UTI Pain",
+      "link": "#",
+      "icon": "FaBandAid",
+      "category": "All",
+      "color": "#3B82F6"
+    },
+    {
+      "name": "Understanding UTI Tests",
+      "link": "#",
+      "icon": "FaVideo",
+      "category": "Videos",
+      "color": "#EC4899"
+    },
+    {
+      "name": "Pelvic Floor Exercises",
+      "link": "#",
+      "icon": "FaRunning",
+      "category": "Videos",
+      "color": "#F59E0B"
+    },
+    {
+      "name": "UTI Health Podcast",
+      "link": "#",
+      "icon": "FaPodcast",
+      "category": "Podcasts",
+      "color": "#6366F1"
+    },
+    {
+      "name": "Hydration and UTIs",
+      "link": "#",
+      "icon": "FaListUl",
+      "category": "Articles",
+      "color": "#14B8A6"
+    }
+  ],
+  "recipeData": {
+    "title": "UTI-Friendly Drink Ideas",
+    "youtubeQuery": "UTI-friendly drink recipes",
+    "recipes": [
+      { "name": "Cranberry Juice Mocktail" },
+      { "name": "Lemon and Ginger Infused Water" },
+      { "name": "Blueberry Smoothie" },
+      { "name": "Green Tea with Honey" },
+      { "name": "Cucumber and Mint Water" },
+      { "name": "Probiotic-Rich Kefir Drink" }
+    ]
+  },
+  "mythsAndFAQs": {
+    "title": "UTI Myths & FAQs",
+    "myths": [
+      {
+        "icon": "FaQuestionCircle",
+        "color": "#FF6B6B",
+        "question": "Only women get UTIs",
+        "answer": "While women are more prone to UTIs, men can also get them, especially as they age."
+      },
+      {
+        "icon": "FaQuestionCircle",
+        "color": "#FF6B6B",
+        "question": "Cranberry juice can cure a UTI",
+        "answer": "While cranberry juice may help prevent UTIs, it's not a cure. Antibiotics are typically needed to treat an active infection."
+      },
+      {
+        "icon": "FaQuestionCircle",
+        "color": "#FF6B6B",
+        "question": "UTIs always cause symptoms",
+        "answer": "Some people, especially older adults, may have a UTI without noticeable symptoms."
+      },
+      {
+        "icon": "FaQuestionCircle",
+        "color": "#FF6B6B",
+        "question": "Holding your urine causes UTIs",
+        "answer": "While it's best to urinate when you feel the need, occasionally holding your urine doesn't directly cause UTIs."
+      }
+    ],
+    "faqs": [
+      {
+        "icon": "FaStethoscope",
+        "color": "#4ECDC4",
+        "question": "How are UTIs diagnosed?",
+        "answer": "UTIs are typically diagnosed through a combination of symptoms and a urine test to check for bacteria."
+      },
+      {
+        "icon": "FaStethoscope",
+        "color": "#4ECDC4",
+        "question": "Can UTIs go away on their own?",
+        "answer": "While some mild UTIs might resolve on their own, it's best to seek treatment to prevent complications."
+      },
+      {
+        "icon": "FaStethoscope",
+        "color": "#4ECDC4",
+        "question": "How can I prevent UTIs?",
+        "answer": "Drinking plenty of water, urinating after sexual activity, and maintaining good hygiene can help prevent UTIs."
+      },
+      {
+        "icon": "FaStethoscope",
+        "color": "#4ECDC4",
+        "question": "Are UTIs contagious?",
+        "answer": "UTIs themselves are not contagious, but the bacteria that cause them can be spread through sexual contact."
+      },
+      {
+        "icon": "FaStethoscope",
+        "color": "#4ECDC4",
+        "question": "Can men get UTIs?",
+        "answer": "Yes, men can get UTIs, although they are less common in men than in women."
+      }
+    ],
+    "facts": [
+      {
+        "icon": "FaFemale",
+        "color": "#10B981",
+        "question": "Gender Prevalence",
+        "answer": "UTIs are more common in women (Source: National Institute of Diabetes and Digestive and Kidney Diseases)"
+      },
+      {
+        "icon": "FaGlassWhiskey",
+        "color": "#6366F1",
+        "question": "Hydration Impact",
+        "answer": "Staying hydrated can help prevent UTIs (Source: American Urological Association)"
+      },
+      {
+        "icon": "FaToilet",
+        "color": "#F59E0B",
+        "question": "Urination Habits",
+        "answer": "Urinating after sexual intercourse can help prevent UTIs (Source: Mayo Clinic)"
+      },
+      {
+        "icon": "FaBan",
+        "color": "#EF4444",
+        "question": "Risk Factors",
+        "answer": "Certain birth control methods and menopause can increase UTI risk (Source: Centers for Disease Control and Prevention)"
+      },
+      {
+        "icon": "FaUserClock",
+        "color": "#6B7280",
+        "question": "Age Risk",
+        "answer": "UTIs can occur at any age, but certain groups (like older adults) are at higher risk (Source: National Institute on Aging)"
+      },
+      {
+        "icon": "FaExclamationTriangle",
+        "color": "#F472B6",
+        "text": "Symptoms",
+        "answer": "Common symptoms include frequent urination, burning sensation, and cloudy urine (Source: Mayo Clinic)"
+      }
+    ]
+  }
+},
+"osteoporosis": {
+  "overview": {
+    "name": "Osteoporosis",
+    "fullName": "Osteoporosis",
+    "description": "Osteoporosis is a bone disease that occurs when the body loses too much bone, makes too little bone, or both. As a result, bones become weak and may break from a fall or, in serious cases, from sneezing or minor bumps. Osteoporosis means 'porous bone' and is often called a silent disease because bone loss occurs without symptoms.",
+    "quickFacts": [
+      {
+        "icon": "FaFemale",
+        "color": "#FF6B6B",
+        "text": "Gender Impact",
+        "details": "Women are at higher risk of osteoporosis, especially after menopause due to the drop in estrogen levels."
+      },
+      {
+        "icon": "FaBone",
+        "color": "#4ECDC4",
+        "text": "Bone Density",
+        "details": "Osteoporosis occurs when bone density decreases, making bones more porous and fragile."
+      },
+      {
+        "icon": "FaWalking",
+        "color": "#45B7D1",
+        "text": "Fracture Risk",
+        "details": "People with osteoporosis have a higher risk of fractures, especially in the hip, spine, and wrist."
+      },
+      {
+        "icon": "FaUserMd",
+        "color": "#FF8C94",
+        "text": "Diagnosis",
+        "details": "Bone density scans (DEXA scans) are the primary method for diagnosing osteoporosis."
+      },
+      {
+        "icon": "FaAppleAlt",
+        "color": "#98D8C8",
+        "text": "Nutrition",
+        "details": "Adequate calcium and vitamin D intake is crucial for maintaining bone health and preventing osteoporosis."
+      },
+      {
+        "icon": "FaRunning",
+        "color": "#F3A712",
+        "text": "Exercise",
+        "details": "Weight-bearing and resistance exercises can help build and maintain bone density."
+      },
+      {
+        "icon": "FaPills",
+        "color": "#F78888",
+        "text": "Treatment",
+        "details": "Treatments may include medications, lifestyle changes, and fall prevention strategies."
+      }
+    ]
+  },
+  "promptTemplate": "Analyze the following data for Osteoporosis risk and provide recommendations:\n\nAge: {age}\nGender: {gender}\nHeight: {height} cm\nWeight: {weight} kg\nActive Symptoms: {symptoms}\nLifestyle Factors: {lifestyle}\n\nProvide a detailed analysis including:\n1. BMI calculation and category\n2. Risk level assessment (Low, Moderate, High)\n3. Lifestyle score (0-10)\n4. Specific recommendations based on the data\n\nFormat the response as a JSON object with the following structure:\n{\n  \"bmi\": { \"value\": number, \"status\": { \"text\": string, \"color\": string } },\n  \"riskLevel\": { \"text\": string, \"color\": string },\n  \"lifestyleScore\": number,\n  \"recommendations\": [string]\n}",
+  "calculator": {
+    "steps": [
+      { "title": "Basic Info", "icon": "FaUser", "color": "#FF69B4" },
+      { "title": "Risk Factors", "icon": "FaExclamationTriangle", "color": "#FF0000" },
+      { "title": "Lifestyle", "icon": "FaHeartbeat", "color": "#00FF00" }
+    ],
+    "basicInfo": [
+      {
+        "name": "age",
+        "label": "Age",
+        "icon": "FaCalendarAlt",
+        "color": "#800080"
+      },
+      {
+        "name": "height",
+        "label": "Height (cm)",
+        "icon": "FaRulerVertical",
+        "color": "#008000"
+      },
+      {
+        "name": "weight",
+        "label": "Weight (kg)",
+        "icon": "FaWeight",
+        "color": "#FFA500"
+      }
+    ],
+    "symptoms": [
+      {
+        "name": "familyHistory",
+        "label": "Family History of Osteoporosis",
+        "icon": "FaUsers",
+        "color": "#F87171"
+      },
+      {
+        "name": "smoking",
+        "label": "Smoking",
+        "icon": "FaSmoking",
+        "color": "#34D399"
+      },
+      {
+        "name": "alcoholConsumption",
+        "label": "Excessive Alcohol Consumption",
+        "icon": "FaWineGlass",
+        "color": "#FBBF24"
+      },
+      {
+        "name": "lowBodyWeight",
+        "label": "Low Body Weight",
+        "icon": "FaWeight",
+        "color": "#60A5FA"
+      },
+      {
+        "name": "earlyMenopause",
+        "label": "Early Menopause",
+        "icon": "FaFemale",
+        "color": "#A78BFA"
+      }
+    ],
+    "lifestyle": [
+      {
+        "name": "exercise",
+        "label": "Regular Exercise",
+        "icon": "FaRunning",
+        "color": "#00FF00"
+      },
+      {
+        "name": "calciumIntake",
+        "label": "Calcium Intake",
+        "icon": "FaCheese",
+        "color": "#FFFF00"
+      },
+      {
+        "name": "vitaminDIntake",
+        "label": "Vitamin D Intake",
+        "icon": "FaSun",
+        "color": "#800080"
+      }
+    ]
+  },
+  "resources": [
+    {
+      "name": "Osteoporosis Support Group",
+      "link": "#",
+      "icon": "FaUserFriends",
+      "category": "All",
+      "color": "#EF4444"
+    },
+    {
+      "name": "Bone-Healthy Diet Guide",
+      "link": "#",
+      "icon": "FaUtensils",
+      "category": "Articles",
+      "color": "#10B981"
+    },
+    {
+      "name": "Osteoporosis and Menopause",
+      "link": "#",
+      "icon": "FaFemale",
+      "category": "Articles",
+      "color": "#8B5CF6"
+    },
+    {
+      "name": "Fall Prevention Tips",
+      "link": "#",
+      "icon": "FaShieldAlt",
+      "category": "All",
+      "color": "#3B82F6"
+    },
+    {
+      "name": "Understanding Bone Density Tests",
+      "link": "#",
+      "icon": "FaVideo",
+      "category": "Videos",
+      "color": "#EC4899"
+    },
+    {
+      "name": "Osteoporosis-Safe Exercises",
+      "link": "#",
+      "icon": "FaDumbbell",
+      "category": "Videos",
+      "color": "#F59E0B"
+    },
+    {
+      "name": "Bone Health Podcast",
+      "link": "#",
+      "icon": "FaPodcast",
+      "category": "Podcasts",
+      "color": "#6366F1"
+    },
+    {
+      "name": "Calcium and Vitamin D Sources",
+      "link": "#",
+      "icon": "FaListUl",
+      "category": "Articles",
+      "color": "#14B8A6"
+    }
+  ],
+  "recipeData": {
+    "title": "Bone-Healthy Recipe Ideas",
+    "youtubeQuery": "calcium-rich recipes for osteoporosis prevention",
+    "recipes": [
+      { "name": "Dairy-Free Calcium-Rich Smoothie" },
+      { "name": "Sardine and Kale Salad" },
+      { "name": "Tofu Stir-Fry with Broccoli" },
+      { "name": "Almond and Chia Seed Pudding" },
+      { "name": "Salmon with Roasted Vegetables" },
+      { "name": "Greek Yogurt Parfait with Berries" }
+    ]
+  },
+  "mythsAndFAQs": {
+    "title": "Osteoporosis Myths & FAQs",
+    "myths": [
+      {
+        "icon": "FaQuestionCircle",
+        "color": "#FF6B6B",
+        "question": "Only elderly women get osteoporosis",
+        "answer": "While postmenopausal women are at higher risk, osteoporosis can affect people of all ages and genders."
+      },
+      {
+        "icon": "FaQuestionCircle",
+        "color": "#FF6B6B",
+        "question": "Osteoporosis is not preventable",
+        "answer": "While some risk factors are uncontrollable, lifestyle changes and proper nutrition can significantly reduce osteoporosis risk."
+      },
+      {
+        "icon": "FaQuestionCircle",
+        "color": "#FF6B6B",
+        "question": "Exercise increases the risk of fractures",
+        "answer": "Appropriate exercise actually strengthens bones and improves balance, reducing fracture risk."
+      },
+      {
+        "icon": "FaQuestionCircle",
+        "color": "#FF6B6B",
+        "question": "You can feel your bones getting weaker",
+        "answer": "Osteoporosis is often called a 'silent disease' because bone loss occurs without symptoms until a fracture happens."
+      }
+    ],
+    "faqs": [
+      {
+        "icon": "FaStethoscope",
+        "color": "#4ECDC4",
+        "question": "How is osteoporosis diagnosed?",
+        "answer": "Osteoporosis is typically diagnosed using a bone density scan (DEXA scan), which measures bone mass in various parts of the body."
+      },
+      {
+        "icon": "FaStethoscope",
+        "color": "#4ECDC4",
+        "question": "Can osteoporosis be reversed?",
+        "answer": "While osteoporosis can't be completely reversed, proper treatment can stop or slow bone loss and reduce fracture risk."
+      },
+      {
+        "icon": "FaStethoscope",
+        "color": "#4ECDC4",
+        "question": "How much calcium do I need daily?",
+        "answer": "Adults generally need 1000-1200 mg of calcium daily, depending on age and gender. Consult a healthcare provider for personalized advice."
+      },
+      {
+        "icon": "FaStethoscope",
+        "color": "#4ECDC4",
+        "question": "What types of exercise are best for bone health?",
+        "answer": "Weight-bearing exercises like walking, jogging, and resistance training are excellent for maintaining and improving bone density."
+      },
+      {
+        "icon": "FaStethoscope",
+        "color": "#4ECDC4",
+        "question": "Can men get osteoporosis?",
+        "answer": "Yes, men can develop osteoporosis, although it's less common than in women. About one in five men over 50 will experience an osteoporotic fracture."
+      }
+    ],
+    "facts": [
+      {
+        "icon": "FaFemale",
+        "color": "#10B981",
+        "question": "Gender Prevalence",
+        "answer": "Osteoporosis is more common in women, especially after menopause (Source: National Osteoporosis Foundation)"
+      },
+      {
+        "icon": "FaBone",
+        "color": "#6366F1",
+        "question": "Bone Health",
+        "answer": "Regular exercise and proper nutrition can help maintain bone density (Source: International Osteoporosis Foundation)"
+      },
+      {
+        "icon": "FaUtensils",
+        "color": "#F59E0B",
+        "question": "Diet Recommendations",
+        "answer": "Calcium-rich foods and vitamin D are crucial for bone health (Source: National Institutes of Health)"
+      },
+      {
+        "icon": "FaBan",
+        "color": "#EF4444",
+        "question": "Risk Factors",
+        "answer": "Smoking, excessive alcohol consumption, and low body weight increase osteoporosis risk (Source: World Health Organization)"
+      },
+      {
+        "icon": "FaUserClock",
+        "color": "#6B7280",
+        "question": "Age Risk",
+        "answer": "Risk increases with age, but osteoporosis can affect people of all ages (Source: American Bone Health)"
+      },
+      {
+        "icon": "FaExclamationTriangle",
+        "color": "#F472B6",
+        "text": "Silent Disease",
+        "answer": "Often called a 'silent disease' as bone loss occurs without symptoms until a fracture (Source: National Osteoporosis Foundation)"
+      }
+    ]
+  }
+}
+}

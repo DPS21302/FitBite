@@ -1,0 +1,1475 @@
+{
+    "menstruation": {
+      "pageTitle": "Nourish Your Cycle: A Journey Through Your Menstrual Phases",
+      
+        "cycleInfo": {
+          "title": "Understanding Your Menstrual Cycle",
+          "phases": [
+            {
+              "name": "Menstrual",
+              "icon": "FaWater",
+              "color": "#FF5C8A",
+              "duration": "3-7 days",
+              "description": "Shedding of uterine lining.",
+              "tips": ["Rest more", "Stay hydrated", "Use heat therapy for cramps"],
+              "dietTips": [
+                "Increase iron-rich foods (leafy greens, lean meats)",
+                "Consume anti-inflammatory foods (berries, fatty fish)",
+                "Stay hydrated with herbal teas (ginger, chamomile)"
+              ],
+              "healthFocus": "Preventing anemia and reducing inflammation",
+              "foodsToEat": [
+                {
+                  "name": "Leafy greens",
+                  "reason": "High in iron to replenish blood loss",
+                  "icon": "FaLeaf",
+                  "iconBg": "#4CAF50"
+                },
+                {
+                  "name": "Fatty fish",
+                  "reason": "Rich in omega-3s to reduce inflammation",
+                  "icon": "FaFish",
+                  "iconBg": "#2196F3"
+                },
+                {
+                  "name": "Ginger tea",
+                  "reason": "Helps alleviate nausea and reduce cramps",
+                  "icon": "FaMugHot",
+                  "iconBg": "#FF9800"
+                }
+              ],
+              "foodsToAvoid": [
+                {
+                  "name": "Caffeine",
+                  "reason": "Can increase cramps and bloating",
+                  "icon": "FaCoffee",
+                  "iconBg": "#795548"
+                },
+                {
+                  "name": "Salty foods",
+                  "reason": "May contribute to water retention",
+                  "icon": "FaPizzaSlice",
+                  "iconBg": "#F44336"
+                },
+                {
+                  "name": "Alcohol",
+                  "reason": "Can worsen mood swings and dehydration",
+                  "icon": "FaWineGlass",
+                  "iconBg": "#9C27B0"
+                }
+              ]
+            },
+            {
+              "name": "Follicular",
+              "icon": "FaLeaf",
+              "color": "#4CAF50",
+              "duration": "7-10 days",
+              "description": "Estrogen rises, follicles develop.",
+              "tips": ["Start new projects", "Increase exercise", "Focus on goals"],
+              "dietTips": [
+                "Eat foods rich in B vitamins (whole grains, eggs)",
+                "Include phytoestrogens (soy, flaxseeds)",
+                "Boost fiber intake (fruits, vegetables)"
+              ],
+              "healthFocus": "Supporting hormonal balance and energy levels",
+              "foodsToEat": [
+                {
+                  "name": "Eggs",
+                  "reason": "Rich in B vitamins for energy production",
+                  "icon": "FaEgg",
+                  "iconBg": "#FFC107"
+                },
+                {
+                  "name": "Flaxseeds",
+                  "reason": "Contain phytoestrogens to support hormonal balance",
+                  "icon": "FaSeedling",
+                  "iconBg": "#8BC34A"
+                },
+                {
+                  "name": "Quinoa",
+                  "reason": "High in protein and fiber for sustained energy",
+                  "icon": "FaWheatAlt",
+                  "iconBg": "#FF5722"
+                }
+              ],
+              "foodsToAvoid": [
+                {
+                  "name": "Processed foods",
+                  "reason": "Can disrupt hormonal balance",
+                  "icon": "FaHamburger",
+                  "iconBg": "#E91E63"
+                },
+                {
+                  "name": "Refined sugars",
+                  "reason": "May cause energy crashes",
+                  "icon": "FaCandyCane",
+                  "iconBg": "#673AB7"
+                },
+                {
+                  "name": "Excessive dairy",
+                  "reason": "Can increase inflammation in some individuals",
+                  "icon": "FaCheese",
+                  "iconBg": "#FFEB3B"
+                }
+              ]
+            },
+            {
+              "name": "Ovulatory",
+              "icon": "FaSun",
+              "color": "#FFC107",
+              "duration": "3-4 days",
+              "description": "Egg release, peak fertility.",
+              "tips": ["Socialize more", "High-intensity workouts", "Track fertility signs"],
+              "dietTips": [
+                "Increase antioxidant-rich foods (colorful fruits and vegetables)",
+                "Consume healthy fats (avocados, nuts)",
+                "Include zinc-rich foods (pumpkin seeds, lean meats)"
+              ],
+              "healthFocus": "Promoting egg health and supporting fertility",
+              "foodsToEat": [
+                {
+                  "name": "Avocados",
+                  "reason": "Rich in healthy fats for hormone production",
+                  "icon": "FaAppleAlt",
+                  "iconBg": "#4CAF50"
+                },
+                {
+                  "name": "Pumpkin seeds",
+                  "reason": "High in zinc, supporting egg health",
+                  "icon": "FaSeedling",
+                  "iconBg": "#FF9800"
+                },
+                {
+                  "name": "Berries",
+                  "reason": "Packed with antioxidants for cellular health",
+                  "icon": "FaStrawberry",
+                  "iconBg": "#E91E63"
+                }
+              ],
+              "foodsToAvoid": [
+                {
+                  "name": "Trans fats",
+                  "reason": "Can negatively impact fertility",
+                  "icon": "FaHamburger",
+                  "iconBg": "#F44336"
+                },
+                {
+                  "name": "Excessive alcohol",
+                  "reason": "May interfere with ovulation",
+                  "icon": "FaWineBottle",
+                  "iconBg": "#9C27B0"
+                },
+                {
+                  "name": "High-mercury fish",
+                  "reason": "Can be harmful for potential pregnancy",
+                  "icon": "FaFish",
+                  "iconBg": "#607D8B"
+                }
+              ]
+            },
+            {
+              "name": "Luteal",
+              "icon": "FaMoon",
+              "color": "#7E57C2",
+              "duration": "10-14 days",
+              "description": "Progesterone rises, PMS may occur.",
+              "tips": ["Practice self-care", "Gentle exercise", "Mindfulness and relaxation"],
+              "dietTips": [
+                "Include magnesium-rich foods (dark chocolate, bananas)",
+                "Consume complex carbs (sweet potatoes, quinoa)",
+                "Limit caffeine and salt to reduce bloating"
+              ],
+              "healthFocus": "Managing PMS symptoms and mood stability",
+              "foodsToEat": [
+                {
+                  "name": "Dark chocolate",
+                  "reason": "Rich in magnesium, helps reduce cravings and mood swings",
+                  "icon": "FaChocolateBar",
+                  "iconBg": "#795548"
+                },
+                {
+                  "name": "Sweet potatoes",
+                  "reason": "Complex carbs to stabilize blood sugar and mood",
+                  "icon": "FaCarrot",
+                  "iconBg": "#FF5722"
+                },
+                {
+                  "name": "Leafy greens",
+                  "reason": "High in calcium, can help reduce PMS symptoms",
+                  "icon": "FaLeaf",
+                  "iconBg": "#4CAF50"
+                }
+              ],
+              "foodsToAvoid": [
+                {
+                  "name": "Caffeine",
+                  "reason": "Can increase anxiety and disrupt sleep",
+                  "icon": "FaCoffee",
+                  "iconBg": "#795548"
+                },
+                {
+                  "name": "Salty snacks",
+                  "reason": "May worsen bloating and water retention",
+                  "icon": "FaCookie",
+                  "iconBg": "#FF9800"
+                },
+                {
+                  "name": "Refined sugars",
+                  "reason": "Can cause mood and energy fluctuations",
+                  "icon": "FaCandyCane",
+                  "iconBg": "#E91E63"
+                }
+              ]
+            }
+          ]
+        },
+      
+      "symptomTracker": {
+        "title": "Daily Symptom Tracker",
+        "promptTemplate": "I'm experiencing the following symptoms during menstruation: {symptoms}. Please provide: 1. Self-care tips 2. Foods to eat 3. Foods to avoid 4. General care or avoidance tips. Format the response in JSON with these keys: selfCareTips, foodsToEat, foodsToAvoid, generalTips. Each should be an array of strings.",
+        "symptoms": [
+          { "name": "Cramps", "icon": "FaHeartbeat", "color": "#FF6B6B" },
+          { "name": "Bloating", "icon": "FaWind", "color": "#4ECDC4" },
+          { "name": "Headache", "icon": "FaHeadSideVirus", "color": "#45B7D1" },
+          { "name": "Fatigue", "icon": "FaBed", "color": "#F6B93B" },
+          { "name": "Mood Swings", "icon": "FaGrimace", "color": "#78E08F" },
+          { "name": "Food Cravings", "icon": "FaAppleAlt", "color": "#E55039" },
+          { "name": "Insomnia", "icon": "FaMoon", "color": "#574B90" },
+          { "name": "Anxiety", "icon": "FaStar", "color": "#F8C291" }
+        ]
+      },
+      
+    
+      
+        "selfCare": {
+          "title": "Nurture Your Cycle: A Garden of Self-Care",
+          "tips": [
+            {
+              "tip": "Mindful Breathing",
+              "icon": "FaLeaf",
+              "color": "#4CAF50",
+              "description": "Practice deep, slow breathing for 5 minutes. Inhale for 4 counts, hold for 4, exhale for 6. This can help reduce stress and alleviate menstrual cramps."
+            },
+            {
+              "tip": "Warm Compress",
+              "icon": "FaHotTub",
+              "color": "#FF5722",
+              "description": "Apply a warm compress to your lower abdomen for 15-20 minutes. This can help relax muscles and reduce menstrual pain. Remember to wrap the compress in a towel to protect your skin."
+            },
+            {
+              "tip": "Aromatherapy",
+              "icon": "FaSprayCan",
+              "color": "#9C27B0",
+              "description": "Use essential oils like lavender, clary sage, or peppermint. Add a few drops to a diffuser or mix with a carrier oil for a soothing massage. These scents can help balance hormones and reduce discomfort."
+            },
+            {
+              "tip": "Journaling",
+              "icon": "FaBook",
+              "color": "#3F51B5",
+              "description": "Spend 10 minutes writing about your feelings, experiences, and any physical symptoms. This can help you track patterns and provide emotional release."
+            },
+            {
+              "tip": "Gentle Stretching",
+              "icon": "FaPrayingHands",
+              "color": "#009688",
+              "description": "Try gentle yoga poses like Child's Pose, Cat-Cow, or Reclined Bound Angle. Hold each pose for 30 seconds to 1 minute, focusing on deep breathing. This can help relieve tension and improve circulation."
+            },
+            {
+              "tip": "Meditation",
+              "icon": "FaBrain",
+              "color": "#9C27B0",
+              "description": "Practice 10-15 minutes of meditation daily. This can help reduce stress, improve emotional balance, and alleviate menstrual symptoms."
+            },
+            {
+              "tip": "Herbal Tea",
+              "icon": "FaMugHot",
+              "color": "#795548",
+              "description": "Drink calming herbal teas like chamomile, ginger, or peppermint. These can help soothe cramps and promote relaxation."
+            }
+          ]
+        },
+        "nutrition": {
+          "title": "Nourishing Your Body During Menstruation",
+          "tips": [
+            {
+              "name": "Iron-rich foods",
+              "icon": "FaAppleAlt",
+              "color": "#D32F2F",
+              "description": "Incorporate foods like spinach, lentils, and lean red meat. Aim for 18mg of iron per day. Pair with vitamin C-rich foods to enhance absorption. This helps replenish iron lost during menstruation."
+            },
+            {
+              "name": "Omega-3 fatty acids",
+              "icon": "FaFish",
+              "color": "#1976D2",
+              "description": "Include salmon, chia seeds, and walnuts in your diet. Aim for 1.1g per day. Omega-3s can help reduce inflammation and alleviate menstrual pain."
+            },
+            {
+              "name": "Magnesium-rich foods",
+              "icon": "FaSeedling",
+              "color": "#388E3C",
+              "description": "Eat dark chocolate (70% cocoa or higher), avocados, and almonds. Aim for 310-320mg daily. Magnesium can help reduce cramps, fatigue, and mood swings."
+            },
+            {
+              "name": "Hydrating foods",
+              "icon": "FaWater",
+              "color": "#0097A7",
+              "description": "Consume water-rich foods like cucumber, watermelon, and celery. Aim to drink 8-10 glasses of water daily. Proper hydration can help reduce bloating and alleviate menstrual symptoms."
+            },
+            {
+              "name": "Probiotic-rich foods",
+              "icon": "FaBacterium",
+              "color": "#FFA000",
+              "description": "Include yogurt, kefir, and sauerkraut in your diet. Aim for 1-2 servings daily. Probiotics support gut health, which can help reduce menstrual discomfort and improve overall well-being."
+            },
+            {
+              "name": "Calcium-rich foods",
+              "icon": "FaCheese",
+              "color": "#FBC02D",
+              "description": "Include dairy products, leafy greens, and fortified plant milks. Aim for 1000mg daily. Calcium can help reduce mood swings and cramps."
+            },
+            {
+              "name": "Complex carbohydrates",
+              "icon": "FaBreadSlice",
+              "color": "#E64A19",
+              "description": "Consume whole grains, quinoa, and sweet potatoes. These provide steady energy and can help stabilize mood swings."
+            }
+          ]
+        },
+       "exerciseRest": {
+    "title": "Balancing Activity and Rest",
+    "tips": [
+      {
+        "name": "Gentle Yoga",
+        "icon": "FaYinYang",
+        "color": "#7B1FA2",
+        "description": "Practice gentle yoga for 20-30 minutes. Focus on poses like Child's Pose, Cat-Cow, and Reclined Twist. These can help ease cramps, improve circulation, and promote relaxation."
+      },
+      {
+        "name": "Low-impact cardio",
+        "icon": "FaWalking",
+        "color": "#689F38",
+        "description": "Engage in 30 minutes of light walking or swimming. This can boost endorphins, improve mood, and reduce menstrual discomfort. Remember to listen to your body and adjust intensity as needed."
+      },
+      {
+        "name": "Stretching",
+        "icon": "FaRunning",
+        "color": "#FF8F00",
+        "description": "Perform gentle stretches for 10-15 minutes, focusing on the lower back, hips, and thighs. Hold each stretch for 30 seconds. This can help alleviate tension and improve flexibility."
+      },
+      {
+        "name": "Adequate sleep",
+        "icon": "FaBed",
+        "color": "#303F9F",
+        "description": "Aim for 7-9 hours of quality sleep. Maintain a consistent sleep schedule and create a relaxing bedtime routine. Good sleep supports hormonal balance and overall well-being during menstruation."
+      },
+      {
+        "name": "Mindful rest",
+        "icon": "FaCloudSun",
+        "color": "#00796B",
+        "description": "Take 3-5 minute breaks throughout the day for deep breathing or short meditation. This can help manage stress levels, reduce tension, and improve overall comfort during your cycle."
+      },
+      {
+        "name": "Pilates",
+        "icon": "FaDumbbell",
+        "color": "#C2185B",
+        "description": "Try a 20-30 minute Pilates session. This low-impact exercise can strengthen your core, improve posture, and alleviate back pain associated with menstruation."
+      },
+      {
+        "name": "Nature walk",
+        "icon": "FaTree",
+        "color": "#33691E",
+        "description": "Take a 30-minute walk in nature. This can boost your mood, reduce stress, and provide gentle exercise to ease menstrual discomfort."
+      }
+    ]
+  },
+
+  "recipeData" : {
+    "title": "Breakfast Ideas",
+    "youtubeQuery": "quick healthy breakfast recipes during menopause",
+    "recipes": [
+      { "name": "Overnight Oats" },
+      { "name": "Avocado Toast" },
+      { "name": "Smoothie Bowl" }
+    ]
+  },
+      "myths": {
+        "title": "Menstruation Myths Debunked",
+        "mythList": [
+          {
+            "title": "You cannot get pregnant during your period",
+            "content": "While it is less likely, pregnancy can still occur during menstruation. Sperm can survive in the body for up to 5 days, and ovulation timing can vary.",
+            "icon": "FaTimesCircle",
+            "color": "text-red-500"
+          },
+          {
+            "title": "Menstruation is always painful",
+            "content": "While many women experience some discomfort, severe pain is not normal and could indicate an underlying condition like endometriosis.",
+            "icon": "FaTimesCircle",
+            "color": "text-red-500"
+          },
+          {
+            "title": "You shouldnt exercise during your period",
+            "content": "Exercise can actually help alleviate cramps and boost mood. Listen to your body and adjust intensity as needed.",
+            "icon": "FaTimesCircle",
+            "color": "text-red-500"
+          },
+          {
+            "title": "PMS is all in your head",
+            "content": "PMS is a real condition caused by hormonal changes. It can affect both physical and emotional well-being.",
+            "icon": "FaTimesCircle",
+            "color": "text-red-500"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "questions": [
+          {
+            "question": "What is a normal menstrual cycle length?",
+            "answer": "A typical menstrual cycle lasts between 21 to 35 days, with the average being 28 days. However, cycle lengths can vary from person to person and even from month to month.",
+            "icon": "FaQuestionCircle",
+            "color": "text-blue-500"
+          },
+          {
+            "question": "How much blood loss is normal during a period?",
+            "answer": "The average blood loss during a period is about 30 to 80 ml. This is equivalent to 2 to 5 tablespoons. Anything significantly more than this could be considered heavy menstrual bleeding.",
+            "icon": "FaQuestionCircle",
+            "color": "text-blue-500"
+          },
+          {
+            "question": "When should I see a doctor about my period?",
+            "answer": "You should consult a doctor if you experience very heavy bleeding, severe pain, irregular cycles, or if your period lasts longer than 7 days. Also, seek medical advice if you miss three or more periods in a row.",
+            "icon": "FaQuestionCircle",
+            "color": "text-blue-500"
+          },
+          {
+            "question": "Can stress affect my menstrual cycle?",
+            "answer": "Yes, stress can affect your menstrual cycle. It can lead to delayed periods, heavier or lighter flows, or even skipped periods. Managing stress through relaxation techniques can help regulate your cycle.",
+            "icon": "FaQuestionCircle",
+            "color": "text-blue-500"
+          }
+        ]
+      }
+    },
+   "pregnancy": {
+  "pageTitle": "Your Pregnancy Journey: Nurturing Life Week by Week",
+  
+  "cycleInfo": {
+    "title": "Understanding Your Pregnancy Journey",
+    "phases": [
+      {
+        "name": "First Trimester",
+        "icon": "FaSeedling",
+        "color": "#4CAF50",
+        "duration": "Weeks 1-12",
+        "description": "Rapid development of baby's organs and systems.",
+        "tips": ["Take prenatal vitamins", "Get plenty of rest", "Avoid harmful substances"],
+        "dietTips": [
+          "Increase folic acid intake (leafy greens, fortified cereals)",
+          "Consume protein-rich foods (lean meats, legumes)",
+          "Stay hydrated with water and herbal teas"
+        ],
+        "healthFocus": "Supporting early fetal development and managing morning sickness",
+        "foodsToEat": [
+          {
+            "name": "Leafy greens",
+            "reason": "High in folic acid for neural tube development",
+            "icon": "FaLeaf",
+            "iconBg": "#4CAF50"
+          },
+          {
+            "name": "Lean meats",
+            "reason": "Rich in protein and iron for fetal growth",
+            "icon": "FaDrumstickBite",
+            "iconBg": "#FF5722"
+          },
+          {
+            "name": "Ginger tea",
+            "reason": "Helps alleviate nausea and morning sickness",
+            "icon": "FaMugHot",
+            "iconBg": "#FF9800"
+          }
+        ],
+        "foodsToAvoid": [
+          {
+            "name": "Raw fish",
+            "reason": "Risk of foodborne illness",
+            "icon": "FaFish",
+            "iconBg": "#F44336"
+          },
+          {
+            "name": "Unpasteurized dairy",
+            "reason": "Risk of listeria contamination",
+            "icon": "FaCheese",
+            "iconBg": "#FFC107"
+          },
+          {
+            "name": "High-mercury fish",
+            "reason": "Can harm fetal nervous system development",
+            "icon": "FaFish",
+            "iconBg": "#9C27B0"
+          }
+        ]
+      },
+      {
+        "name": "Second Trimester",
+        "icon": "FaBabyCarriage",
+        "color": "#2196F3",
+        "duration": "Weeks 13-26",
+        "description": "Baby's growth accelerates, mother's energy increases.",
+        "tips": ["Start prenatal exercise", "Plan for maternity leave", "Consider childbirth classes"],
+        "dietTips": [
+          "Increase calcium intake (dairy, fortified plant milks)",
+          "Consume omega-3 rich foods (fatty fish, chia seeds)",
+          "Add more fiber to prevent constipation (whole grains, fruits)"
+        ],
+        "healthFocus": "Supporting rapid fetal growth and maintaining maternal health",
+        "foodsToEat": [
+          {
+            "name": "Salmon",
+            "reason": "Rich in omega-3s for fetal brain development",
+            "icon": "FaFish",
+            "iconBg": "#2196F3"
+          },
+          {
+            "name": "Greek yogurt",
+            "reason": "High in calcium and protein for bone development",
+            "icon": "FaIceCream",
+            "iconBg": "#9C27B0"
+          },
+          {
+            "name": "Quinoa",
+            "reason": "Complete protein and fiber for maternal health",
+            "icon": "FaSeedling",
+            "iconBg": "#FF5722"
+          }
+        ],
+        "foodsToAvoid": [
+          {
+            "name": "Raw sprouts",
+            "reason": "Risk of bacterial contamination",
+            "icon": "FaSeedling",
+            "iconBg": "#F44336"
+          },
+          {
+            "name": "Deli meats",
+            "reason": "Risk of listeria unless heated",
+            "icon": "FaHamburger",
+            "iconBg": "#795548"
+          },
+          {
+            "name": "Excess caffeine",
+            "reason": "Can affect fetal heart rate and sleep patterns",
+            "icon": "FaCoffee",
+            "iconBg": "#607D8B"
+          }
+        ]
+      },
+      {
+        "name": "Third Trimester",
+        "icon": "FaBaby",
+        "color": "#FF4081",
+        "duration": "Weeks 27-40",
+        "description": "Baby's final growth spurt, preparation for birth.",
+        "tips": ["Practice relaxation techniques", "Prepare nursery", "Pack hospital bag"],
+        "dietTips": [
+          "Increase iron intake (lean meats, beans)",
+          "Consume vitamin K rich foods (kale, spinach)",
+          "Stay hydrated to prevent premature contractions"
+        ],
+        "healthFocus": "Preparing for labor and supporting baby's final development",
+        "foodsToEat": [
+          {
+            "name": "Sweet potatoes",
+            "reason": "Rich in beta-carotene for fetal eye development",
+            "icon": "FaCarrot",
+            "iconBg": "#FF5722"
+          },
+          {
+            "name": "Lentils",
+            "reason": "High in iron and folate for blood production",
+            "icon": "FaLeaf",
+            "iconBg": "#4CAF50"
+          },
+          {
+            "name": "Kiwi fruit",
+            "reason": "High in vitamin C to enhance iron absorption",
+            "icon": "FaAppleAlt",
+            "iconBg": "#8BC34A"
+          }
+        ],
+        "foodsToAvoid": [
+          {
+            "name": "Alcohol",
+            "reason": "Can cause fetal alcohol syndrome",
+            "icon": "FaWineBottle",
+            "iconBg": "#9C27B0"
+          },
+          {
+            "name": "Undercooked meats",
+            "reason": "Risk of toxoplasmosis",
+            "icon": "FaDrumstickBite",
+            "iconBg": "#F44336"
+          },
+          {
+            "name": "Unwashed produce",
+            "reason": "Risk of toxoplasmosis from soil contamination",
+            "icon": "FaAppleAlt",
+            "iconBg": "#FF9800"
+          }
+        ]
+      }
+    ]
+  },
+  
+  "symptomTracker": {
+    "title": "Weekly Pregnancy Symptom Tracker",
+    "promptTemplate": "I'm experiencing the following symptoms during pregnancy: {symptoms}. Please provide: 1. Self-care tips 2. Foods to eat 3. Foods to avoid 4. General care or avoidance tips. Format the response in JSON with these keys: selfCareTips, foodsToEat, foodsToAvoid, generalTips. Each should be an array of strings.",
+    "symptoms": [
+      { "name": "Morning Sickness", "icon": "FaMeh", "color": "#FF6B6B" },
+      { "name": "Fatigue", "icon": "FaBed", "color": "#4ECDC4" },
+      { "name": "Breast Tenderness", "icon": "FaFemale", "color": "#45B7D1" },
+      { "name": "Food Cravings", "icon": "FaAppleAlt", "color": "#F6B93B" },
+      { "name": "Mood Swings", "icon": "FaGrimace", "color": "#78E08F" },
+      { "name": "Back Pain", "icon": "FaUserInjured", "color": "#E55039" },
+      { "name": "Swelling", "icon": "FaExpandArrowsAlt", "color": "#574B90" },
+      { "name": "Insomnia", "icon": "FaMoon", "color": "#F8C291" }
+    ]
+  },
+  
+ 
+  
+  "selfCare": {
+    "title": "Nurturing Your Pregnancy: A Garden of Self-Care",
+    "tips": [
+      {
+        "tip": "Prenatal Yoga",
+        "icon": "FaPrayingHands",
+        "color": "#4CAF50",
+        "description": "Practice 20-30 minutes of prenatal yoga daily. Focus on gentle stretches and breathing exercises. This can help reduce stress, improve sleep, and prepare your body for labor."
+      },
+      {
+        "tip": "Meditation for Two",
+        "icon": "FaBrain",
+        "color": "#9C27B0",
+        "description": "Spend 10-15 minutes daily in quiet meditation, focusing on your connection with your baby. This can reduce anxiety and promote bonding with your unborn child."
+      },
+      {
+        "tip": "Pregnancy Massage",
+        "icon": "FaHandsWash",
+        "color": "#FF5722",
+        "description": "Treat yourself to a prenatal massage every 2-4 weeks. This can help alleviate back pain, reduce swelling, and improve overall comfort during pregnancy."
+      },
+      {
+        "tip": "Hydration Station",
+        "icon": "FaWater",
+        "color": "#2196F3",
+        "description": "Create a daily hydration routine. Aim for 8-10 glasses of water, and keep a reusable water bottle with you. Proper hydration supports amniotic fluid levels and can help prevent premature contractions."
+      },
+      {
+        "tip": "Nesting with Purpose",
+        "icon": "FaHome",
+        "color": "#795548",
+        "description": "Spend 30 minutes each day preparing your home for baby. This can include organizing the nursery, baby-proofing, or creating a postpartum care station. Purposeful nesting can reduce anxiety and increase feelings of preparedness."
+      },
+      {
+        "tip": "Pregnancy Journal",
+        "icon": "FaBook",
+        "color": "#3F51B5",
+        "description": "Take 10 minutes each evening to write in a pregnancy journal. Record your feelings, physical changes, and milestones. This practice can help process emotions and create a beautiful keepsake of your journey."
+      },
+      {
+        "tip": "Gentle Walking",
+        "icon": "FaWalking",
+        "color": "#009688",
+        "description": "Aim for a 20-30 minute gentle walk daily, preferably in nature. This low-impact exercise can improve circulation, boost mood, and help maintain a healthy pregnancy weight."
+      }
+    ]
+  },
+  
+  "nutrition": {
+    "title": "Nourishing Your Body During Pregnancy",
+    "tips": [
+      {
+        "name": "Folic Acid-rich foods",
+        "icon": "FaLeaf",
+        "color": "#4CAF50",
+        "description": "Incorporate leafy greens, fortified cereals, and legumes. Aim for 600-800 mcg daily. Folic acid is crucial for preventing neural tube defects in early pregnancy."
+      },
+      {
+        "name": "Calcium sources",
+        "icon": "FaBone",
+        "color": "#3F51B5",
+        "description": "Include dairy products, fortified plant milks, and leafy greens. Aim for 1000mg daily. Calcium supports the development of your baby's bones and teeth."
+      },
+      {
+        "name": "Iron-rich foods",
+        "icon": "FaDumbbell",
+        "color": "#F44336",
+        "description": "Consume lean meats, beans, and fortified cereals. Aim for 27mg daily. Iron supports increased blood volume and prevents anemia during pregnancy."
+      },
+      {
+        "name": "Omega-3 fatty acids",
+        "icon": "FaFish",
+        "color": "#2196F3",
+        "description": "Include fatty fish (in moderation), chia seeds, and walnuts. Aim for 200-300mg of DHA daily. Omega-3s support fetal brain and eye development."
+      },
+      {
+        "name": "Protein sources",
+        "icon": "FaEgg",
+        "color": "#FFC107",
+        "description": "Eat lean meats, eggs, legumes, and dairy. Aim for 75-100g daily. Protein is essential for your baby's growth and your body's changing needs."
+      },
+      {
+        "name": "Vitamin D",
+        "icon": "FaSun",
+        "color": "#FF9800",
+        "description": "Get sunlight exposure and consume fortified foods. Aim for 600 IU daily. Vitamin D supports calcium absorption and bone health for both you and your baby."
+      },
+      {
+        "name": "Probiotics",
+        "icon": "FaBacterium",
+        "color": "#9C27B0",
+        "description": "Include yogurt, kefir, and fermented foods. Probiotics support your digestive health and may reduce the risk of complications like gestational diabetes."
+      }
+    ]
+  },
+  
+  "exerciseRest": {
+    "title": "Balancing Activity and Rest During Pregnancy",
+    "tips": [
+      {
+        "name": "Prenatal Swimming",
+        "icon": "FaSwimmer",
+        "color": "#2196F3",
+        "description": "Try swimming for 30 minutes, 2-3 times a week. This low-impact exercise is excellent for cardiovascular health and can help alleviate pregnancy discomforts."
+      },
+      {
+        "name": "Pelvic Floor Exercises",
+        "icon": "FaHeartbeat",
+        "color": "#E91E63",
+        "description": "Practice Kegel exercises for 5 minutes, 3 times daily. This can help prevent urinary incontinence and prepare your body for labor."
+      },
+      {
+        "name": "Pregnancy Pilates",
+        "icon": "FaPrayingHands",
+        "color": "#4CAF50",
+        "description": "Attend a prenatal Pilates class once a week. This can help maintain core strength and improve posture as your body changes."
+      },
+      {
+        "name": "Adequate Sleep",
+        "icon": "FaBed",
+        "color": "#9C27B0",
+        "description": "Aim for 7-9 hours of sleep nightly. Create a comfortable sleep environment and consider using a pregnancy pillow for support."
+      },
+      {
+        "name": "Gentle Stretching",
+        "icon": "FaChild",
+        "color": "#FF9800",
+        "description": "Spend 10-15 minutes daily on gentle stretching. Focus on your back, hips, and legs to alleviate pregnancy-related aches and pains."
+      },
+      {
+        "name": "Mindful Rest Periods",
+        "icon": "FaCouch",
+        "color": "#795548",
+        "description": "Take 3-4 short rest periods throughout the day. Use this time to practice deep breathing and connect with your baby."
+      },
+      {
+        "name": "Prenatal Strength Training",
+        "icon": "FaDumbbell",
+        "color": "#607D8B",
+        "description": "Engage in light strength training 2-3 times a week. Use bodyweight exercises or light weights to maintain muscle tone and support your changing body."
+      }
+    ]
+  },
+  "title": "Breakfast Ideas",
+  "recipeData" : {
+    "title": "Breakfast Ideas",
+    "youtubeQuery": "quick healthy breakfast recipes",
+    "recipes": [
+      { "name": "Overnight Oats" },
+      { "name": "Avocado Toast" },
+      { "name": "Smoothie Bowl" }
+    ]
+  },
+  "myths": {
+    "title": "Pregnancy Myths Debunked",
+    "mythList": [
+      {
+        "title": "Eating for two means doubling your food intake",
+        "content": "You only need about 300-500 extra calories per day during pregnancy. Focus on nutrient-dense foods rather than increasing quantity drastically.",
+        "icon": "FaTimesCircle",
+        "color": "text-red-500"
+      },
+      {
+        "title": "You cant exercise during pregnancy",
+        "content": "Most women can and should exercise during pregnancy. Always consult your healthcare provider, but moderate exercise is generally safe and beneficial.",
+        "icon": "FaTimesCircle",
+        "color": "text-red-500"
+      },
+      {
+        "title": "Cocoa butter prevents stretch marks",
+        "content": "While moisturizing can help with skin elasticity, stretch marks are largely determined by genetics and how quickly you gain weight.",
+        "icon": "FaTimesCircle",
+        "color": "text-red-500"
+      },
+      {
+        "title": "You cant dye your hair during pregnancy",
+        "content": "Modern hair dyes are generally considered safe during pregnancy. If concerned, consult your doctor or consider natural alternatives.",
+        "icon": "FaTimesCircle",
+        "color": "text-red-500"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions About Pregnancy",
+    "questions": [
+      {
+        "question": "When should I start taking prenatal vitamins?",
+        "answer": "Ideally, you should start taking prenatal vitamins before conception. If you're already pregnant, start as soon as possible. Folic acid is particularly important in the first trimester.",
+        "icon": "FaQuestionCircle",
+        "color": "text-blue-500"
+      },
+      {
+        "question": "Is it safe to travel during pregnancy?",
+        "answer": "In most cases, it's safe to travel during pregnancy, especially in the second trimester. However, consult your healthcare provider before making travel plans, especially for long distances or to areas with limited medical facilities.",
+        "icon": "FaQuestionCircle",
+        "color": "text-blue-500"
+      },
+      {
+        "question": "How much weight should I gain during pregnancy?",
+        "answer": "Weight gain recommendations vary based on your pre-pregnancy BMI. Generally, a healthy weight gain is 25-35 pounds for women with a normal BMI. Consult your healthcare provider for personalized advice.",
+        "icon": "FaQuestionCircle",
+        "color": "text-blue-500"
+      },
+      {
+        "question": "When will I feel the baby move?",
+        "answer": "Most first-time mothers feel fetal movement, often called 'quickening', between 18-25 weeks of pregnancy. Experienced mothers might feel movement earlier, around 16-18 weeks.",
+        "icon": "FaQuestionCircle",
+        "color": "text-blue-500"
+      }
+    ]
+  }
+},
+
+"perimenopause": {
+  "pageTitle": "Navigating Perimenopause: Embracing Change",
+  
+  "cycleInfo": {
+    "title": "Understanding Perimenopause",
+    "phases": [
+      {
+        "name": "Early Perimenopause",
+        "title": "Early Perimenopause: The Transition Begins",
+        "icon": "FaHourglassStart",
+        "color": "#FF9800",
+        "duration": "Can last 2-8 years",
+        "description": "Gradual changes in menstrual cycle and hormone levels.",
+        "tips": ["Track your cycle", "Maintain a healthy lifestyle", "Discuss symptoms with your doctor"],
+        "dietTips": [
+          "Increase calcium and vitamin D intake",
+          "Consume more whole grains and lean proteins",
+          "Stay hydrated"
+        ],
+        "healthFocus": "Managing early symptoms and preserving bone health",
+        "foodsToEat": [
+          {
+            "name": "Leafy greens",
+            "reason": "Rich in calcium for bone health",
+            "icon": "FaLeaf",
+            "iconBg": "#4CAF50"
+          },
+          {
+            "name": "Fatty fish",
+            "reason": "High in omega-3s for heart and brain health",
+            "icon": "FaFish",
+            "iconBg": "#2196F3"
+          },
+          {
+            "name": "Whole grains",
+            "reason": "Provide fiber and help stabilize mood",
+            "icon": "FaBreadSlice",
+            "iconBg": "#FFA000"
+          }
+        ],
+        "foodsToAvoid": [
+          {
+            "name": "Processed foods",
+            "reason": "Can exacerbate mood swings and hot flashes",
+            "icon": "FaHamburger",
+            "iconBg": "#F44336"
+          },
+          {
+            "name": "Excessive caffeine",
+            "reason": "May trigger hot flashes and disrupt sleep",
+            "icon": "FaCoffee",
+            "iconBg": "#795548"
+          },
+          {
+            "name": "Alcohol",
+            "reason": "Can worsen symptoms and disrupt sleep",
+            "icon": "FaWineGlass",
+            "iconBg": "#9C27B0"
+          }
+        ]
+      },
+      {
+        "name": "Late Perimenopause",
+        "title": "Late Perimenopause: Approaching Menopause",
+        "icon": "FaHourglassHalf",
+        "color": "#9C27B0",
+        "duration": "1-3 years before menopause",
+        "description": "More noticeable changes in cycle and increased symptoms.",
+        "tips": ["Explore stress reduction techniques", "Consider hormone therapy options", "Prioritize sleep"],
+        "dietTips": [
+          "Increase phytoestrogen-rich foods",
+          "Focus on heart-healthy fats",
+          "Limit caffeine and alcohol"
+        ],
+        "healthFocus": "Managing symptoms and preparing for menopause",
+        "foodsToEat": [
+          {
+            "name": "Soy products",
+            "reason": "Contains phytoestrogens that may help balance hormones",
+            "icon": "FaSeedling",
+            "iconBg": "#4CAF50"
+          },
+          {
+            "name": "Berries",
+            "reason": "Rich in antioxidants for overall health",
+            "icon": "FaAppleAlt",
+            "iconBg": "#E91E63"
+          },
+          {
+            "name": "Nuts and seeds",
+            "reason": "Provide healthy fats and protein",
+            "icon": "FaSeedling",
+            "iconBg": "#FF9800"
+          }
+        ],
+        "foodsToAvoid": [
+          {
+            "name": "Spicy foods",
+            "reason": "May trigger hot flashes",
+            "icon": "FaPepperHot",
+            "iconBg": "#F44336"
+          },
+          {
+            "name": "High-sugar foods",
+            "reason": "Can contribute to mood swings and weight gain",
+            "icon": "FaCandyCane",
+            "iconBg": "#E91E63"
+          },
+          {
+            "name": "Fatty meats",
+            "reason": "May increase risk of heart disease",
+            "icon": "FaDrumstickBite",
+            "iconBg": "#795548"
+          }
+        ]
+      }
+    ]
+  },
+  
+  "symptomTracker": {
+    "title": "Perimenopause Symptom Tracker",
+    "promptTemplate": "I'm experiencing the following symptoms during perimenopause: {symptoms}. Please provide: 1. Self-care tips 2. Foods to eat 3. Foods to avoid 4. General care or avoidance tips. Format the response in JSON with these keys: selfCareTips, foodsToEat, foodsToAvoid, generalTips. Each should be an array of strings.",
+    "symptoms": [
+      { "name": "Irregular Periods", "icon": "FaCalendarAlt", "color": "#FF6B6B" },
+      { "name": "Hot Flashes", "icon": "FaTemperatureHigh", "color": "#FF9800" },
+      { "name": "Mood Changes", "icon": "FaSmile", "color": "#4CAF50" },
+      { "name": "Sleep Disturbances", "icon": "FaBed", "color": "#2196F3" },
+      { "name": "Vaginal Dryness", "icon": "FaTint", "color": "#E91E63" },
+      { "name": "Weight Gain", "icon": "FaWeight", "color": "#795548" }
+    ]
+  },
+  
+
+  "selfCare": {
+    "title": "Nurturing Yourself During Perimenopause",
+    "tips": [
+      {
+        "tip": "Mindfulness Meditation",
+        "icon": "FaBrain",
+        "color": "#4CAF50",
+        "description": "Practice 10-15 minutes of mindfulness meditation daily to reduce stress and manage mood swings."
+      },
+      {
+        "tip": "Regular Exercise",
+        "icon": "FaRunning",
+        "color": "#2196F3",
+        "description": "Engage in moderate exercise for 30 minutes, 5 days a week. This can help manage weight, improve mood, and maintain bone density."
+      },
+      {
+        "tip": "Cooling Techniques",
+        "icon": "FaSnowflake",
+        "color": "#00BCD4",
+        "description": "Keep a cool pack under your pillow and dress in layers to manage hot flashes and night sweats."
+      },
+      {
+        "tip": "Pelvic Floor Exercises",
+        "icon": "FaHeartbeat",
+        "color": "#FF4081",
+        "description": "Practice Kegel exercises daily to strengthen pelvic floor muscles and improve bladder control."
+      },
+      {
+        "tip": "Journaling",
+        "icon": "FaBook",
+        "color": "#9C27B0",
+        "description": "Spend 10 minutes each evening journaling to process emotions and track symptoms."
+      }
+    ]
+  },
+  
+  "nutrition": {
+    "title": "Nourishing Your Body During Perimenopause",
+    "tips": [
+      {
+        "name": "Calcium-rich foods",
+        "icon": "FaCheese",
+        "color": "#f25914",
+        "description": "Aim for 1200mg of calcium daily through dairy products, leafy greens, and fortified foods to maintain bone health."
+      },
+      {
+        "name": "Phytoestrogen sources",
+        "icon": "FaSeedling",
+        "color": "#4CAF50",
+        "description": "Include soy products, flaxseeds, and legumes in your diet. These may help balance hormones and reduce hot flashes."
+      },
+      {
+        "name": "Omega-3 fatty acids",
+        "icon": "FaFish",
+        "color": "#2196F3",
+        "description": "Consume fatty fish, walnuts, and chia seeds for heart health and potential mood stabilization."
+      },
+      {
+        "name": "Vitamin D",
+        "icon": "FaSun",
+        "color": "#FFC107",
+        "description": "Get 600-800 IU of vitamin D daily through sunlight exposure, fatty fish, and fortified foods for bone health."
+      },
+      {
+        "name": "Fiber-rich foods",
+        "icon": "FaAppleAlt",
+        "color": "#e24740",
+        "description": "Include plenty of fruits, vegetables, and whole grains to help manage weight and support digestive health."
+      }
+    ]
+  },
+  
+  "exerciseRest": {
+    "title": "Balancing Activity and Rest During Perimenopause",
+    "tips": [
+      {
+        "name": "Weight-bearing exercises",
+        "icon": "FaDumbbell",
+        "color": "#F44336",
+        "description": "Engage in activities like brisk walking, jogging, or dancing for 30 minutes, 5 times a week to maintain bone density."
+      },
+      {
+        "name": "Strength training",
+        "icon": "FaUserNinja",
+        "color": "#9C27B0",
+        "description": "Include resistance exercises 2-3 times a week to build muscle mass and boost metabolism."
+      },
+      {
+        "name": "Yoga or Pilates",
+        "icon": "FaPrayingHands",
+        "color": "#4CAF50",
+        "description": "Practice yoga or Pilates 2-3 times a week to improve flexibility, balance, and reduce stress."
+      },
+      {
+        "name": "Adequate sleep",
+        "icon": "FaBed",
+        "color": "#2196F3",
+        "description": "Aim for 7-9 hours of sleep per night. Establish a consistent sleep routine and create a cool, comfortable sleeping environment."
+      },
+      {
+        "name": "Relaxation techniques",
+        "icon": "FaLeaf",
+        "color": "#009688",
+        "description": "Practice deep breathing, progressive muscle relaxation, or guided imagery for 10-15 minutes daily to manage stress and improve sleep."
+      }
+    ]
+  },
+   "recipeData" : {
+    "title": "Breakfast Ideas",
+    "youtubeQuery": "quick healthy breakfast recipes",
+    "recipes": [
+      { "name": "Overnight Oats" },
+      { "name": "Avocado Toast" },
+      { "name": "Smoothie Bowl" }
+    ]
+  },
+  
+  "myths": {
+    "title": "Perimenopause Myths Debunked",
+    "mythList": [
+      {
+        "title": "Perimenopause always starts in your 40s",
+        "content": "Perimenopause can begin in your 30s or 40s. The timing varies for each woman and can last anywhere from 2 to 10 years.",
+        "icon": "FaTimesCircle",
+        "color": "text-red-500"
+      },
+      {
+        "title": "You can't get pregnant during perimenopause",
+        "content": "While fertility declines, pregnancy is still possible until you've gone 12 months without a period. Contraception is still necessary if you don't want to become pregnant.",
+        "icon": "FaTimesCircle",
+        "color": "text-red-500"
+      },
+      {
+        "title": "Hormone therapy is dangerous for everyone",
+        "content": "For many women, the benefits of hormone therapy outweigh the risks. It's important to discuss your individual situation with your healthcare provider.",
+        "icon": "FaTimesCircle",
+        "color": "text-red-500"
+      },
+      {
+        "title": "Weight gain during perimenopause is inevitable",
+        "content": "While metabolism slows down, weight gain isn't inevitable. Regular exercise and a balanced diet can help maintain a healthy weight.",
+        "icon": "FaTimesCircle",
+        "color": "text-red-500"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions About Perimenopause",
+    "questions": [
+      {
+        "question": "How long does perimenopause last?",
+        "answer": "Perimenopause can last anywhere from 2 to 10 years. On average, most women experience perimenopausal symptoms for about 4 years before reaching menopause.",
+        "icon": "FaQuestionCircle",
+        "color": "text-blue-500"
+      },
+      {
+        "question": "What's the difference between perimenopause and menopause?",
+        "answer": "Perimenopause is the transition period leading up to menopause. Menopause is officially diagnosed when you've gone 12 consecutive months without a menstrual period.",
+        "icon": "FaQuestionCircle",
+        "color": "text-blue-500"
+      },
+      {
+        "question": "Can I still get pregnant during perimenopause?",
+        "answer": "Yes, it's still possible to get pregnant during perimenopause. If you don't want to become pregnant, you should continue using contraception until you've gone 12 months without a period.",
+        "icon": "FaQuestionCircle",
+        "color": "text-blue-500"
+      },
+      {
+        "question": "Are there natural ways to manage perimenopausal symptoms?",
+        "answer": "Yes, many women find relief through lifestyle changes such as regular exercise, stress reduction techniques, dietary adjustments, and herbal remedies. However, it's important to discuss any new treatments with your healthcare provider.",
+        "icon": "FaQuestionCircle",
+        "color": "text-blue-500"
+      }
+    ]
+  }
+},
+
+"menopause": {
+  "pageTitle": "Embracing Menopause: A New Chapter",
+  
+  "cycleInfo": {
+    "title": "Understanding Menopause",
+    "phases": [
+      {
+        "name": "Menopause Transition",
+        "title": "Menopause Transition: The Final Year",
+        "icon": "FaHourglassEnd",
+        "color": "#673AB7",
+        "duration": "12 months after last period",
+        "description": "The year following your last menstrual period.",
+        "tips": ["Continue healthy lifestyle habits", "Regular check-ups", "Explore symptom management options"],
+        "dietTips": [
+          "Focus on nutrient-dense foods",
+          "Maintain calcium and vitamin D intake",
+          "Consider soy products for phytoestrogens"
+        ],
+        "healthFocus": "Managing symptoms and maintaining overall health",
+        "foodsToEat": [
+          {
+            "name": "Soy products",
+            "reason": "Contains phytoestrogens that may help with hot flashes",
+            "icon": "FaSeedling",
+            "iconBg": "#4CAF50"
+          },
+          {
+            "name": "Fatty fish",
+            "reason": "Rich in omega-3s for heart and brain health",
+            "icon": "FaFish",
+            "iconBg": "#2196F3"
+          },
+          {
+            "name": "Leafy greens",
+            "reason": "High in calcium and vitamin K for bone health",
+            "icon": "FaLeaf",
+            "iconBg": "#8BC34A"
+          }
+        ],
+        "foodsToAvoid": [
+          {
+            "name": "Alcohol",
+            "reason": "Can trigger hot flashes and disrupt sleep",
+            "icon": "FaWineGlass",
+            "iconBg": "#9C27B0"
+          },
+          {
+            "name": "Caffeine",
+            "reason": "May exacerbate hot flashes and sleep issues",
+            "icon": "FaCoffee",
+            "iconBg": "#795548"
+          },
+          {
+            "name": "Spicy foods",
+            "reason": "Can trigger hot flashes in some women",
+            "icon": "FaPepperHot",
+            "iconBg": "#F44336"
+          }
+        ]
+      },
+      {
+        "name": "Post-Menopause",
+        "title": "Post-Menopause: Your New Normal",
+        "icon": "FaSun",
+        "color": "#FF5722",
+        "duration": "The rest of your life after menopause",
+        "description": "The stage of life after menopause is confirmed.",
+        "tips": ["Regular health screenings", "Bone density tests", "Stay physically and mentally active"],
+        "dietTips": [
+          "Continue focus on bone health",
+          "Heart-healthy diet",
+          "Maintain healthy weight"
+        ],
+        "healthFocus": "Preventing age-related health issues and maintaining quality of life",
+        "foodsToEat": [
+          {
+            "name": "Berries",
+            "reason": "Rich in antioxidants for overall health",
+            "icon": "FaAppleAlt",
+            "iconBg": "#E91E63"
+          },
+          {
+            "name": "Whole grains",
+            "reason": "Provide fiber and help maintain healthy weight",
+            "icon": "FaBreadSlice",
+            "iconBg": "#FFA000"
+          },
+          {
+            "name": "Lean proteins",
+            "reason": "Support muscle mass and bone health",
+            "icon": "FaEgg",
+            "iconBg": "#4CAF50"
+          }
+        ],
+        "foodsToAvoid": [
+          {
+            "name": "Processed foods",
+            "reason": "Can contribute to weight gain and inflammation",
+            "icon": "FaHamburger",
+            "iconBg": "#F44336"
+          },
+          {
+            "name": "Sugary snacks",
+            "reason": "May increase risk of weight gain and diabetes",
+            "icon": "FaCandyCane",
+            "iconBg": "#E91E63"
+          },
+          {
+            "name": "High-sodium foods",
+            "reason": "Can increase risk of high blood pressure",
+            "icon": "FaSalt",
+            "iconBg": "#9E9E9E"
+          }
+        ]
+      }
+    ]
+  },
+  
+  "symptomTracker": {
+    "title": "Menopause Symptom Tracker",
+    "promptTemplate": "I'm experiencing the following symptoms during menopause: {symptoms}. Please provide: 1. Self-care tips 2. Foods to eat 3. Foods to avoid 4. General care or avoidance tips. Format the response in JSON with these keys: selfCareTips, foodsToEat, foodsToAvoid, generalTips. Each should be an array of strings.",
+    "symptoms": [
+      { "name": "Hot Flashes", "icon": "FaTemperatureHigh", "color": "#FF5722" },
+      { "name": "Night Sweats", "icon": "FaMoon", "color": "#3F51B5" },
+      { "name": "Mood Changes", "icon": "FaSmile", "color": "#4CAF50" },
+      { "name": "Vaginal Dryness", "icon": "FaTint", "color": "#E91E63" },
+      { "name": "Bone Density Loss", "icon": "FaBone", "color": "#795548" },
+      { "name": "Urinary Issues", "icon": "FaToilet", "color": "#2196F3" }
+    ]
+  },
+  
+ 
+  
+  "selfCare": {
+    "title": "Nurturing Yourself During Menopause",
+    "tips": [
+      {
+        "tip": "Stress Reduction",
+        "icon": "FaYinYang",
+        "color": "#4CAF50",
+        "description": "Practice stress-reduction techniques like meditation, yoga, or deep breathing for 15-20 minutes daily to manage mood swings and hot flashes."
+      },
+      {
+        "tip": "Sleep Hygiene",
+        "icon": "FaBed",
+        "color": "#2196F3",
+        "description": "Establish a consistent sleep routine, keep your bedroom cool, and avoid screens before bedtime to improve sleep quality."
+      },
+      {
+        "tip": "Pelvic Floor Exercises",
+        "icon": "FaHeartbeat",
+        "color": "#E91E63",
+        "description": "Practice Kegel exercises daily to strengthen pelvic floor muscles and improve bladder control."
+      },
+      {
+        "tip": "Skin Care",
+        "icon": "FaSprayCan",
+        "color": "#FF9800",
+        "description": "Use a gentle moisturizer daily and protect your skin from sun damage to combat dryness and maintain skin health."
+      },
+      {
+        "tip": "Social Connections",
+        "icon": "FaUsers",
+        "color": "#9C27B0",
+        "description": "Maintain strong social connections. Spend time with friends or join a support group to share experiences and reduce feelings of isolation."
+      }
+    ]
+  },
+  "nutrition": {
+    "title": "Nourishing Your Body During Menopause",
+    "tips": [
+      {
+        "name": "Calcium and Vitamin D",
+        "icon": "FaCheese",
+        "color": "#FF9800",
+        "description": "Aim for 1200mg of calcium and 600-800 IU of vitamin D daily to maintain bone health and prevent osteoporosis."
+      },
+      {
+        "name": "Phytoestrogens",
+        "icon": "FaSeedling",
+        "color": "#4CAF50",
+        "description": "Include soy products, flaxseeds, and legumes in your diet. These may help balance hormones and reduce hot flashes."
+      },
+      {
+        "name": "Omega-3 fatty acids",
+        "icon": "FaFish",
+        "color": "#2196F3",
+        "description": "Consume fatty fish, walnuts, and chia seeds for heart health and potential cognitive benefits."
+      },
+      {
+        "name": "Fruits and Vegetables",
+        "icon": "FaCarrot",
+        "color": "#FF5722",
+        "description": "Eat a variety of colorful fruits and vegetables for antioxidants, vitamins, and minerals to support overall health."
+      },
+      {
+        "name": "Hydration",
+        "icon": "FaTint",
+        "color": "#03A9F4",
+        "description": "Drink plenty of water throughout the day to help with hot flashes, skin health, and overall wellbeing."
+      }
+    ]
+  },
+  
+  "exerciseRest": {
+    "title": "Balancing Activity and Rest During Menopause",
+    "tips": [
+      {
+        "name": "Weight-bearing exercises",
+        "icon": "FaDumbbell",
+        "color": "#F44336",
+        "description": "Engage in activities like brisk walking, jogging, or dancing for 30 minutes, 5 times a week to maintain bone density and heart health."
+      },
+      {
+        "name": "Strength training",
+        "icon": "FaUserNinja",
+        "color": "#9C27B0",
+        "description": "Include resistance exercises 2-3 times a week to build muscle mass, boost metabolism, and improve bone density."
+      },
+      {
+        "name": "Yoga or Tai Chi",
+        "icon": "FaPrayingHands",
+        "color": "#4CAF50",
+        "description": "Practice yoga or tai chi 2-3 times a week to improve balance, flexibility, and reduce stress."
+      },
+      {
+        "name": "Pelvic Floor Exercises",
+        "icon": "FaHeartbeat",
+        "color": "#E91E63",
+        "description": "Perform Kegel exercises daily to strengthen pelvic floor muscles and improve bladder control."
+      },
+      {
+        "name": "Adequate Rest",
+        "icon": "FaBed",
+        "color": "#2196F3",
+        "description": "Prioritize getting 7-9 hours of quality sleep each night. Create a cool, comfortable sleeping environment and establish a consistent bedtime routine."
+      }
+    ]
+  },
+
+  "recipeData" : {
+    "title": "Breakfast Ideas",
+    "youtubeQuery": "quick healthy breakfast recipes during menopause",
+    "recipes": [
+      { "name": "Overnight Oats" },
+      { "name": "Avocado Toast" },
+      { "name": "Smoothie Bowl" }
+    ]
+  },
+
+  "myths": {
+    "title": "Menopause Myths Debunked",
+    "mythList": [
+      {
+        "title": "Menopause always starts at 50",
+        "content": "The average age for menopause is 51, but it can occur anywhere between 45 and 55. Some women may experience it earlier or later.",
+        "icon": "FaTimesCircle",
+        "color": "text-red-500"
+      },
+      {
+        "title": "Menopause symptoms last only a few years",
+        "content": "While most intense symptoms may last 2-3 years, some women experience symptoms for much longer, even into post-menopause.",
+        "icon": "FaTimesCircle",
+        "color": "text-red-500"
+      },
+      {
+        "title": "Weight gain during menopause is inevitable",
+        "content": "While metabolism slows down, weight gain isn't inevitable. Regular exercise and a balanced diet can help maintain a healthy weight.",
+        "icon": "FaTimesCircle",
+        "color": "text-red-500"
+      },
+      {
+        "title": "You don't need to worry about birth control after menopause",
+        "content": "You should continue using birth control until you've gone 12 consecutive months without a period, as pregnancy is still possible during the menopausal transition.",
+        "icon": "FaTimesCircle",
+        "color": "text-red-500"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions About Menopause",
+    "questions": [
+      {
+        "question": "How do I know if I've reached menopause?",
+        "answer": "Menopause is officially diagnosed when you've gone 12 consecutive months without a menstrual period. However, the transition to menopause (perimenopause) can last several years and is often accompanied by symptoms like irregular periods, hot flashes, and mood changes.",
+        "icon": "FaQuestionCircle",
+        "color": "text-blue-500"
+      },
+      {
+        "question": "Is hormone therapy safe for managing menopausal symptoms?",
+        "answer": "Hormone therapy can be effective for managing menopausal symptoms like hot flashes and vaginal dryness. However, it's not suitable for everyone. The risks and benefits should be discussed with your healthcare provider to determine if it's right for you.",
+        "icon": "FaQuestionCircle",
+        "color": "text-blue-500"
+      },
+      {
+        "question": "Can I still get pregnant after menopause?",
+        "answer": "Once you've reached menopause (12 months without a period), you can no longer get pregnant naturally. However, during the menopausal transition, pregnancy is still possible, so contraception should be used until menopause is confirmed.",
+        "icon": "FaQuestionCircle",
+        "color": "text-blue-500"
+      },
+      {
+        "question": "Are there natural remedies for managing menopausal symptoms?",
+        "answer": "Some women find relief from menopausal symptoms through lifestyle changes, dietary adjustments, and natural remedies like black cohosh or evening primrose oil. However, the effectiveness of these varies, and it's important to discuss any treatments with your healthcare provider.",
+        "icon": "FaQuestionCircle",
+        "color": "text-blue-500"
+      }
+    ]
+  }
+}
+  }
