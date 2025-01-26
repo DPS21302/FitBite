@@ -38,6 +38,17 @@ app.use("/api/admin", adminRoutes);
 app.use("/api/calorie-tracker", calorieTrackerRoutes);
 app.use("/api", exerciseRoutes);
 
+
+
+app.use(cors({
+  origin: [
+    "https://fit-bite-frontend.vercel.app/",
+    "http://localhost:3000"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
 app.get("/", (req, res) => {
   res.json("Welcome to our Server");
 });
