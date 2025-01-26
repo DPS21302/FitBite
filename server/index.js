@@ -20,6 +20,17 @@ connectDB();
 
 const app = express();
 
+app.use(cors({
+  origin: [
+    "https://fit-bite-frontend.vercel.app",
+    "http://localhost:3000"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
+app.options('*', cors());
+
 
 app.use(express.json());
 
@@ -33,14 +44,7 @@ app.use("/api", exerciseRoutes);
 
 
 
-app.use(cors({
-  origin: [
-    "https://fit-bite-frontend.vercel.app",
-    "http://localhost:3000"
-  ],
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
+
 
 app.get("/", (req, res) => {
   res.json("Welcome to our Server");
