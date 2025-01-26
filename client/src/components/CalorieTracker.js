@@ -44,6 +44,7 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { useSelector } from "react-redux";
 
+
 ChartJS.register(
   ArcElement,
   Tooltip,
@@ -95,6 +96,8 @@ const CalorieTracker = () => {
   const [activityLevel, setActivityLevel] = useState("moderate");
 
   const user = useSelector((state) => state.auth.user);
+
+
   const firebaseUid = user.uid;
 
   const api = axios.create({

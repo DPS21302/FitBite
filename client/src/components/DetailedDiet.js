@@ -336,14 +336,14 @@ const DetailedDiet = () => {
           <h2 className="text-3xl font-semibold mb-6 text-gray-800 border-b-2 border-green-500 pb-2">
             Key Principles of the {diet.title}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 cursor-pointer">
             {diet.principles.map((principle, index) => (
               <PrincipleCard
                 key={index}
                 icon={
                   <Icon
                     name={principle.icon}
-                    className="text-4xl text-red-500"
+                    className="text-4xl text-green-600"
                   />
                 }
                 title={principle.title}
@@ -655,7 +655,7 @@ const DetailedDiet = () => {
 
 const PrincipleCard = ({ icon, title, description }) => (
   <motion.div
-    className="bg-gradient-to-r from-red-100 to-slate-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 "
+    className=" p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 "
     whileHover={{ scale: 1.05 }}
     transition={{ duration: 0.3 }}>
     <div className="flex items-center mb-4">
@@ -668,7 +668,7 @@ const PrincipleCard = ({ icon, title, description }) => (
 
 const FoodList = ({ title, items, icon }) => (
   <motion.div
-    className="bg-gradient-to-tr from-green-100 to-red-50 p-6 rounded-lg shadow-md flex-1"
+    className=" p-6 rounded-lg shadow-md flex-1"
     whileHover={{ scale: 1.05 }}
     transition={{ duration: 0.3 }}>
     <h3 className="text-xl font-semibold mb-4">{title}</h3>

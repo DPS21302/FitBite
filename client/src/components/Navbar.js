@@ -20,7 +20,7 @@ import toast from "react-hot-toast";
 const GEMINI_API_KEY = `${process.env.REACT_APP_GOOGLE_API_KEY}`;
 
 const Navbar = () => {
-  const { user } = useSelector((state) => state.auth);
+  const { user, isLoggedIn } = useSelector((state) => state.auth);
   const auth = getAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -70,6 +70,11 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleSearch = () => {
+    if (!isLoggedIn) {
+      // toast.error('You must be signed in to access this Feature');
+      navigate('/login');
+      return;
+    }
     setIsSearchOpen(!isSearchOpen);
     setSearchQuery("");
     setSearchResults("");
@@ -140,12 +145,12 @@ const Navbar = () => {
                     whileHover={{ y: -2 }}
                     whileTap={{ y: 0 }}
                   >
-                    <Link
-                      to={`#${item.toLowerCase().replace(" ", "-")}`}
+                    <a
+                      href={`#${item.toLowerCase()}`}
                       className="text-gray-600 hover:text-[#609a33] transition-colors duration-300 font-medium"
                     >
                       {item}
-                    </Link>
+                    </a>
                   </motion.div>
                 )
               )}
@@ -156,7 +161,7 @@ const Navbar = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={toggleSearch}
-                className="text-xl text-gray-600 hover:text-[#609a33] transition-colors duration-300"
+                className="text-xl text-gray-600 hover:text-[#609a33] transition-colors duration-300 hidden md:flex"
                 aria-label="Search"
               >
                 <FaSearch />
@@ -166,7 +171,7 @@ const Navbar = () => {
                 <motion.div
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="w-10 h-10 rounded-full ring-2 ring-[#609a33] cursor-pointer overflow-hidden"
+                  className="w-10 h-10 rounded-full ring-2 ring-[#609a33] cursor-pointer overflow-hidden hidden md:flex"
                   onClick={toggleDropdown}
                 >
                   {user?.photoURL ? (
@@ -272,6 +277,66 @@ const Navbar = () => {
             )
           )}
         </ul>
+        <ul className="py-2">
+        <div className="flex items-center space-x-6 ml-4">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={toggleSearch}
+                className="text-xl text-gray-600 hover:text-[#609a33] transition-colors duration-300"
+                aria-label="Search"
+              >
+                <FaSearch />
+              </motion.button>
+
+              <div className="relative">
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="w-10 h-10 rounded-full ring-2 ring-[#609a33] cursor-pointer overflow-hidden"
+                  onClick={toggleDropdown}
+                >
+                  {user?.photoURL ? (
+                    <img
+                      className="w-full h-full object-cover"
+                      src={user.photoURL}
+                      alt="User avatar"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-[#609a33] flex items-center justify-center text-white text-lg font-bold">
+                      {user?.email ? user.email[0].toUpperCase() : "?"}
+                    </div>
+                  )}
+                </motion.div>
+
+                {isDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-xl py-1 z-50"
+                  >
+                    <Link
+                      to="/myprofile"
+                      className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      <FaUser className="mr-2" />
+                      Profile
+                    </Link>
+                    <button
+                      onClick={handleLogout}
+                      className="flex items-center w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      <FaSignOutAlt className="mr-2" />
+                      Logout
+                    </button>
+                  </motion.div>
+                )}
+              </div>
+              
+</div>
+</ul>
       </nav>
 
       {/* Search Box */}
@@ -303,63 +368,66 @@ const Navbar = () => {
         </button>
       </div>
 
-      <AnimatePresence>
-        {isSearchOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm flex justify-center items-center px-4 z-50"
-          >
+      {isLoggedIn && (
+        <AnimatePresence>
+          {isSearchOpen && (
             <motion.div
-              initial={{ scale: 0.9, y: -20 }}
-              animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.9, y: -20 }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="relative w-full max-w-3xl bg-white rounded-lg shadow-xl p-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm flex justify-center items-center px-4 z-50"
             >
-              <form onSubmit={handleSearch} className="mb-4">
-                <div className="relative">
-                  <input
-                    type="search"
-                    placeholder="Ask me anything..."
-                    className="w-full text-xl text-gray-800 bg-transparent border-b-2 border-[#609a33] py-2 pr-12 focus:outline-none focus:border-[#4c7a29] transition-colors"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    autoFocus
-                  />
-                  <button
-                    type="submit"
-                    className="absolute right-0 top-1/2 -translate-y-1/2 text-2xl text-[#609a33] hover:text-[#4c7a29] transition-colors"
-                    aria-label="Search"
-                  >
-                    <FaSearch />
-                  </button>
-                </div>
-              </form>
-              <div className="max-h-[60vh] overflow-y-auto">
-                {isLoading ? (
-                  <div className="flex justify-center items-center h-32">
-                    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#609a33]"></div>
-                  </div>
-                ) : (
-                  <ReactMarkdown className="prose max-w-none">
-                    {displayedText}
-                  </ReactMarkdown>
-                )}
-              </div>
-              <button
-                onClick={toggleSearch}
-                className="absolute top-2 right-2 text-2xl text-gray-600 hover:text-[#609a33] transition-colors cursor-pointer"
-                aria-label="Close search"
+              <motion.div
+                initial={{ scale: 0.9, y: -20 }}
+                animate={{ scale: 1, y: 0 }}
+                exit={{ scale: 0.9, y: -20 }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                className="relative w-full max-w-3xl bg-white rounded-lg shadow-xl p-6"
               >
-                <FaTimes />
-              </button>
+                <form onSubmit={handleSearch} className="mb-4">
+                  <div className="relative">
+                    <input
+                      type="search"
+                      placeholder="Ask me anything..."
+                      className="w-full text-xl text-gray-800 bg-transparent border-b-2 border-[#609a33] py-2 pr-12 focus:outline-none focus:border-[#4c7a29] transition-colors"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      autoFocus
+                    />
+                    <button
+                      type="submit"
+                      className="absolute right-0 top-1/2 -translate-y-1/2 text-2xl text-[#609a33] hover:text-[#4c7a29] transition-colors"
+                      aria-label="Search"
+                    >
+                      <FaSearch />
+                    </button>
+                  </div>
+                </form>
+                <div className="max-h-[60vh] overflow-y-auto">
+                  {isLoading ? (
+                    <div className="flex justify-center items-center h-32">
+                      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#609a33]"></div>
+                    </div>
+                  ) : (
+                    <ReactMarkdown className="prose max-w-none">
+                      {displayedText}
+                    </ReactMarkdown>
+                  )}
+                </div>
+                <button
+                  onClick={toggleSearch}
+                  className="absolute top-2 right-2 text-2xl text-gray-600 hover:text-[#609a33] transition-colors cursor-pointer"
+                  aria-label="Close search"
+                >
+                  <FaTimes />
+                </button>
+              </motion.div>
+              
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          )}
+        </AnimatePresence>
+      )}
     </>
   );
 };

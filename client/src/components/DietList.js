@@ -108,7 +108,7 @@ const DietWheel = () => {
 
       <div className="absolute top-1/2 left-1/2 w-32 h-32 -ml-16 -mt-16 flex items-center justify-center cursor-pointer">
         <motion.div
-          className="w-32 h-32 rounded-full bg-gradient-to-br from-red-400 to-pink-600 shadow-lg flex items-center justify-center"
+          className="lg:w-32 lg:h-32 w-20 h-20 rounded-full bg-gradient-to-br from-red-400 to-pink-600 shadow-lg flex items-center justify-center"
           whileHover={{ scale: 1.1 }}
           onClick={() =>
             handleDietClick(
@@ -121,12 +121,12 @@ const DietWheel = () => {
             )
           }
         >
-          <GiHeartBeats className="text-5xl text-white" />
+          <GiHeartBeats className="lg:text-5xl text-3xl text-white" />
         </motion.div>
         {[...Array(3)].map((_, index) => (
           <motion.div
             key={index}
-            className="absolute w-full h-full rounded-full border-2 border-red-400"
+            className="absolute lg:w-full lg:h-full w-20 h-20 rounded-full border-2 border-red-400"
             animate={{
               scale: [1, 2],
               opacity: [0.5, 0],

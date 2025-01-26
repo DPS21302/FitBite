@@ -16,7 +16,7 @@ const WHero = () => {
       transition={{ type: 'spring', delay }}
     >
       <motion.div
-        className="relative w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white rounded-full shadow-lg flex items-center justify-center"
+        className="relative w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:flex sm:hidden md:hidden bg-white rounded-full shadow-lg flex items-center justify-center"
         whileHover={{ scale: 1.2, rotate: 360 }}
         animate={{
           y: [0, -10, 0],
@@ -41,15 +41,15 @@ const WHero = () => {
       <div className="relative z-20 flex flex-col lg:flex-row h-full p-4 sm:p-8 lg:p-40">
         {/* Left side: Text and button */}
         <motion.div 
-          className="flex flex-col justify-center items-start lg:w-1/2 mb-8 lg:mb-0"
+          className="flex flex-col justify-center lg:items-start items-center lg:w-1/2 mb-8 lg:mb-0"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-gray-800 leading-tight">
-            Nurture Your<br/>Journey
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-gray-800 leading-tight min-w-xl">
+            Nurture Your Journey
           </h1>
-          <p className="text-lg sm:text-xl mb-6 sm:mb-8 text-gray-600 max-w-md">
+          <p className="text-lg sm:text-xl mb-6 sm:mb-8 text-gray-600 max-w-80">
             Discover personalized wellness plans for every stage of your life.
           </p>
           <motion.button

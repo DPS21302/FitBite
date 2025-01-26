@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaEnvelope } from "react-icons/fa";
 import { MdEmail, MdHelp } from "react-icons/md";
@@ -8,10 +7,6 @@ import { MdEmail, MdHelp } from "react-icons/md";
 const VerifyEmail = () => {
   const { user } = useSelector((state) => state.auth);
   const [showTips, setShowTips] = useState(false);
-
-  if (!user) {
-    return <Navigate to="/login" />;
-  }
 
   return (
     <motion.div

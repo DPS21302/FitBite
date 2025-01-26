@@ -8,6 +8,7 @@ const bmiRoutes = require("./routes/bmiRoutes");
 const userRoutes = require("./routes/userRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const calorieTrackerRoutes = require("./routes/calorieTrackerRoutes");
+const exerciseRoutes = require("./routes/exerciseRoutes");
 
 dotenv.config();
 
@@ -35,9 +36,16 @@ app.use("/api/tool", bmiRoutes);
 app.use("/api/profile", userRoutes);
 app.use("/api/admin", adminRoutes); 
 app.use("/api/calorie-tracker", calorieTrackerRoutes);
+app.use("/api", exerciseRoutes);
 
 app.get("/", (req, res) => {
   res.json("Welcome to our Server");
+});
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: 'Something went wrong!' });
 });
 
 const PORT = process.env.PORT || 5000;

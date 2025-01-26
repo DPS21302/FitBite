@@ -7,13 +7,13 @@ import './index.css';
 import { initializeApp } from 'firebase/app';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAnlq-bophgbsadZ8t4RsmBG3jnHks5Dro",
-  authDomain: "fir-auth-cab38.firebaseapp.com",
-  projectId: "fir-auth-cab38",
-  storageBucket: "fir-auth-cab38.appspot.com",
-  messagingSenderId: "571143035178",
-  appId: "1:571143035178:web:a6ca80f8e4665bbda56653",
-  measurementId: "G-Q6NJ2M8T21"
+  apiKey: "AIzaSyBug6BxKeoImEq6IqI1_EcdS58UoVkpQyg",
+  authDomain: "fitbite-63fb4.firebaseapp.com",
+  projectId: "fitbite-63fb4",
+  storageBucket: "fitbite-63fb4.firebasestorage.app",
+  messagingSenderId: "775090710556",
+  appId: "1:775090710556:web:85f316947c7a1a048a57d9",
+  measurementId: "G-R2ZJNDRYRM"
 };
 
 // Initialize Firebase

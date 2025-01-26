@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 import { setUser } from "../redux/authSlice";
 import {
   getAuth,
@@ -12,6 +12,8 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import toast from "react-hot-toast";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Email is required"),
@@ -21,9 +23,30 @@ const LoginSchema = Yup.object().shape({
 });
 
 const Login = () => {
+  const location = useLocation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const auth = getAuth();
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  
+  useEffect(() => {
+    let isFirstRender = true;
+
+    if (!isFirstRender && !location.state?.from) {
+      return;
+    }
+
+    if (!isLoggedIn) {
+      toast.error('You must be signed in to access this page', {
+        id: 'auth-toast', // Unique ID prevents duplicates
+      });
+      window.history.replaceState({}, document.title);
+    }
+
+    return () => {
+      isFirstRender = false;
+    };
+  }, [location]);
 
   const handleLogin = async (values, { setSubmitting, setFieldError }) => {
     try {

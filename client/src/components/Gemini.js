@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import ReactMarkdown from "react-markdown";
 import { motion, AnimatePresence } from "framer-motion";
@@ -26,7 +26,7 @@ import { BsFillCalendarCheckFill } from "react-icons/bs";
 import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
 
-const GEMINI_API_KEY = "AIzaSyC_n8K7pyHU4sTfg_kaKyQ7GWAUC4kr5sY";
+const GEMINI_API_KEY = "AIzaSyAUxRJBtaQZDk9dsoz-zbsPVzjXlLlUZqg";
 
 const Gemini = ({ formData }) => {
   const [dietPlan, setDietPlan] = useState("");

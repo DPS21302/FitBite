@@ -8,7 +8,7 @@ const WGemini = ({ prompt, onResult }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const genAI = new GoogleGenerativeAI('AIzaSyASTsmmCaNfcu5eoqsqRZqZqDb7SXOjQ9Q'); // Replace with your Gemini API key
+  const genAI = new GoogleGenerativeAI('AIzaSyCl1TuHfx8HGdGCj6D-ZSTQSdCKEjX_IYg'); // Replace with your Gemini API key
   const fetchGeminiResponse = async () => {
     setIsLoading(true);
     setError(null);

@@ -55,7 +55,7 @@ const HeroSection = () => {
       transition={{ type: "spring", delay }}
     >
       <motion.div
-        className="relative w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white rounded-full shadow-lg flex items-center justify-center"
+        className="relative w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white rounded-full shadow-lg flex items-center justify-center sm:hidden lg:flex"
         whileHover={{ scale: 1.1}}
         animate={{
           y: [0, -10, 0],
@@ -133,7 +133,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
           >
             <motion.img
-              className="relative rounded-lg shadow-2xl"
+              className="relative rounded-lg shadow-2xl items-center justify-center w-full h-full object-cover object-center"
               src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTc2ZGZwdnFkcGVrMG9tcnFyNmgxa3l4aDA1bXMwaXNkdDM5aGlxaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/05lXpzQa3rmksKJfOn/giphy.gif"
               alt="Healthy Food"
               whileHover={{ scale: 1.05 }}
@@ -207,7 +207,7 @@ const AnimatedButton = ({ text, icon, primary }) => (
 const AnimatedCounter = ({ count }) => {
   return (
     <motion.div
-      className="absolute -bottom-4 -right-4 bg-white p-4 rounded-lg shadow-xl"
+      className="absolute -bottom-8 -right-8 bg-white p-4 rounded-lg shadow-xl"
       initial={{ scale: 0, rotate: -10 }}
       animate={{ scale: 1, rotate: 0 }}
       transition={{ type: "spring", stiffness: 260, damping: 20, delay: 1.2 }}

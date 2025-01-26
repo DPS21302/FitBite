@@ -1,16 +1,96 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useReducer, useRef } from 'react';
 import { motion, useAnimation, animate, AnimatePresence } from 'framer-motion';
 import WNavbar from './WNavbar';
 import WHero from './WHero';
 import { Link } from 'react-router-dom';
-import { FaPregnantWomen, FaHourglassHalf, FaPause, FaBrain, FaHeartbeat, FaFemale, FaBaby, FaAppleAlt, FaDna, FaMoon, FaSun, FaWalking, FaSwimmer, FaBiking, FaOilCan } from 'react-icons/fa';
+import { FaUtensils, FaHourglassHalf, FaPauseCircle, FaThermometerHalf, FaBacteria, FaHeartbeat, FaFemale, FaInfoCircle, FaAppleAlt, FaChevronDown, FaQuoteLeft, FaQuoteRight, FaStar, FaChevronLeft, FaChevronRight, FaOilCan } from 'react-icons/fa';
 import { GiMeditation, GiWeightLiftingUp, GiBodySwapping, GiMedicalThermometer, GiMedicines, GiNightSleep, GiDna1, GiFruitBowl, GiMilkCarton } from 'react-icons/gi';
 import { IoIosNutrition, IoMdFlower } from 'react-icons/io';
-import { MdPregnantWoman, MdOutlineMenuBook, MdWaterDrop, MdMood } from 'react-icons/md';
+import { MdPregnantWoman, MdTimeline, MdWaterDrop, MdMood } from 'react-icons/md';
 import { RiMentalHealthLine, RiHeartPulseLine, RiPlantLine } from 'react-icons/ri';
 import { AiOutlineSchedule, AiFillFire, AiOutlineExperiment } from 'react-icons/ai';
 import { TbSalad, TbDna } from 'react-icons/tb';
 import { GiMoonOrbit } from 'react-icons/gi';
+import WellnessCompanion from './WellnessComapnion';
+
+
+const LifeStageTimeline = () => {
+  const [hoveredPhase, setHoveredPhase] = useState(null);
+
+  const phases = [
+    { icon: FaFemale, title: "Menstruation", color: "#FF6B6B", description: "Regular menstrual cycle and reproductive health" },
+    { icon: MdPregnantWoman, title: "Pregnancy", color: "#4ECDC4", description: "Fetal development and maternal health" },
+    { icon: FaHourglassHalf, title: "Perimenopause", color: "#45B7D1", description: "Transition phase before menopause" },
+    { icon: GiMoonOrbit, title: "Menopause", color: "#7F63B8", description: "End of menstrual cycle and hormonal changes" },
+  ];
+
+  return (
+    <div className="bg-gray-50 py-20 px-4" id='lifecycls'>
+      <motion.h2
+        className="text-4xl font-bold text-center mb-16 text-teal-800"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        Life's Wellness Journey
+      </motion.h2>
+
+      <div className="max-w-6xl mx-auto">
+        <div className="relative">
+          <div className="hidden md:block absolute left-0 right-0 h-1 top-1/2 bg-gradient-to-r from-red-300 via-teal-300 to-purple-300 rounded-full" />
+          <div className="md:hidden absolute top-0 bottom-0 left-1/2 w-1 bg-gradient-to-b from-red-300 via-teal-300 to-purple-300 rounded-full" />
+          
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            {phases.map((phase, index) => (
+              <Link to={`/women-segment/${phase.title.toLowerCase()}`} key={index} className="mb-12 md:mb-0">
+                <div 
+                  className="relative"
+                  onMouseEnter={() => setHoveredPhase(index)}
+                  onMouseLeave={() => setHoveredPhase(null)}
+                >
+                  <motion.div
+                    className="w-24 h-24 rounded-full flex items-center justify-center cursor-pointer z-10 mx-auto
+                              shadow-lg transition-all duration-300 ease-in-out"
+                    style={{ backgroundColor: phase.color }}
+                    whileHover={{ scale: 1.1, boxShadow: '0 0 25px rgba(0,0,0,0.3)' }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <phase.icon className="text-4xl text-white" />
+                  </motion.div>
+                  
+                  <motion.h3 
+                    className="mt-4 font-semibold text-center text-gray-800"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    {phase.title}
+                  </motion.h3>
+
+                  <AnimatePresence>
+                    {hoveredPhase === index && (
+                      <motion.div
+                        className="absolute left-1/2 md:-left-1/2 transform -translate-x-1/2 bg-white p-4 rounded-xl shadow-xl mt-4 w-64 z-20"
+                        style={{ borderTop: `4px solid ${phase.color}` }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 20 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <h4 className="text-lg font-bold mb-2" style={{ color: phase.color }}>{phase.title}</h4>
+                        <p className="text-sm text-gray-700">{phase.description}</p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 
 
@@ -18,461 +98,71 @@ import { GiMoonOrbit } from 'react-icons/gi';
 
 const HealthCategories = () => {
   const categories = [
-    { icon: FaFemale, title: "Menstruation", color: "#FF69B4" },
-    { icon: MdPregnantWoman, title: "Pregnancy", color: "#87CEEB" },
-    { icon: IoMdFlower, title: "Menopause", color: "#DDA0DD" },
-    { icon: RiMentalHealthLine, title: "PCOS", color: "#20B2AA" },
-    { icon: RiHeartPulseLine, title: "Anemia", color: "#CD5C5C" },
-    { icon: AiOutlineExperiment, title: "Breast Health", color: "#FF69B4" },
+    { icon: RiMentalHealthLine, title: "PCOS", color: "#20B2AA", link: "pcos" },
+    { icon: RiHeartPulseLine, title: "Iron Deficiency Anemia", color: "#CD5C5C", link: "ironDeficiencyAnemia" },
+    { icon: AiOutlineExperiment, title: "Breast Cancer", color: "#FF69B4", link: "bcancer" },
+    { icon: FaThermometerHalf, title: "Thyroid Disorder", color: "#4682B4", link: "thyroidDisorder" },
+    { icon: FaBacteria, title: "UTI", color: "#FFD700", link: "uti" },
+    { icon: FaInfoCircle, title: "Osteoporosis", color: "#8FBC8F", link: "osteoporosis" },
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-br from-purple-50 to-pink-50">
+    <section className="py-20 bg-gradient-to-br from-purple-100 to-pink-100">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-purple-800">Featured Health Categories</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
-          {categories.map((category, index) => (
-            <motion.div
-              key={index}
-              className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center cursor-pointer"
-              whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(0,0,0,0.1)" }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <motion.div
-                className="text-5xl mb-4"
-                style={{ color: category.color }}
-                initial={{ rotate: 0 }}
-                whileHover={{ rotate: 360, transition: { duration: 0.5 } }}
-              >
-                <category.icon />
-              </motion.div>
-              <h3 className="text-xl font-semibold text-center">{category.title}</h3>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-
-const LifecyclePhase = ({ icon: Icon, color, label, to }) => {
-  return (
-    <Link to={to}>
-      <motion.div
-        className="flex flex-col items-center justify-center w-40 h-40 m-4 rounded-full shadow-lg cursor-pointer"
-        whileHover={{ scale: 1.1, boxShadow: '0px 0px 8px rgba(0,0,0,0.3)' }}
-        whileTap={{ scale: 0.95 }}
-        style={{ backgroundColor: color }}
-      >
-        <Icon className="text-4xl text-white mb-2" />
-        <span className="text-white font-semibold text-center">{label}</span>
-      </motion.div>
-    </Link>
-  );
-};
-
-const WomenLifecycle = () => {
-  const phases = [
-    { icon: FaFemale, color: '#FF6B6B', label: 'Menstruation', to: '/women-segment/menstruation' },
-    { icon: MdPregnantWoman, color: '#4ECDC4', label: 'Pregnancy', to: '/women-segment/pregnancy' },
-    { icon: FaHourglassHalf, color: '#45B7D1', label: 'Perimenopause', to: '/women-segment/perimenopause' },
-    { icon: GiMoonOrbit, color: '#7F63B8', label: 'Menopause', to: '/women-segment/menopause' },
-  ];
-
-  return (
-    <div className="bg-gradient-to-r from-purple-50 to-pink-50 py-16">
-      <div className="container mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
-          Women's Lifecycle Phases
-        </h2>
-        <motion.div
-          className="flex flex-wrap justify-center"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          {phases.map((phase, index) => (
-            <motion.div
-              key={phase.label}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <LifecyclePhase {...phase} />
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </div>
-  );
-};
-
-
-const HealthJourneyAndFacts = () => {
-  const [mode, setMode] = useState('facts'); // 'journey' or 'facts'
-  const [stage, setStage] = useState(0);
-  const [character, setCharacter] = useState(null);
-  const [decisions, setDecisions] = useState([]);
-  const [healthScore, setHealthScore] = useState(100);
-  const [activeFact, setActiveFact] = useState(null);
-
-  const characters = [
-    { name: "Sophia", age: 25, occupation: "Software Engineer" },
-    { name: "Elena", age: 35, occupation: "Teacher" },
-    { name: "Zara", age: 45, occupation: "Business Owner" },
-  ];
-  const stages = [
-    {
-      title: "Morning Routine",
-      description: "It's 7 AM. How do you start your day?",
-      options: [
-        { text: "Skip breakfast and rush to work", impact: -10, icon: GiBodySwapping },
-        { text: "Quick yoga and a balanced breakfast", impact: 10, icon: FaHeartbeat },
-        { text: "Check emails in bed for an hour", impact: -5, icon: FaBrain },
-      ],
-    },
-    {
-      title: "Work Stress",
-      description: "Deadlines are piling up. How do you cope?",
-      options: [
-        { text: "Work through lunch and stay late", impact: -15, icon: GiMedicalThermometer },
-        { text: "Take short breaks and prioritize tasks", impact: 5, icon: MdMood },
-        { text: "Delegate some work to colleagues", impact: 10, icon: FaBrain },
-      ],
-    },
-    {
-      title: "Evening Dilemma",
-      description: "You're feeling exhausted. What's your evening plan?",
-      options: [
-        { text: "Order takeout and binge-watch TV", impact: -10, icon: GiMedicines },
-        { text: "Cook a nutritious meal and read a book", impact: 15, icon: GiBodySwapping },
-        { text: "Go out for drinks with friends", impact: -5, icon: MdMood },
-      ],
-    },
-    {
-      title: "Health Check",
-      description: "You've been feeling off lately. What do you do?",
-      options: [
-        { text: "Ignore it and hope it goes away", impact: -20, icon: GiMedicalThermometer },
-        { text: "Research symptoms online", impact: -5, icon: FaBrain },
-        { text: "Schedule a check-up with your doctor", impact: 20, icon: FaHeartbeat },
-      ],
-    },
-    {
-      title: "Self-Care Sunday",
-      description: "You have a free day. How do you spend it?",
-      options: [
-        { text: "Catch up on work", impact: -10, icon: GiMedicines },
-        { text: "Spa day and meditation", impact: 15, icon: MdMood },
-        { text: "Outdoor activities and nature", impact: 10, icon: GiBodySwapping },
-      ],
-    },
-  ];
-
-  const facts = [
-    { 
-      icon: GiMedicalThermometer, 
-      title: "PMS Symptoms",
-      fact: "75% of women experience PMS symptoms", 
-      detail: "Premenstrual syndrome can cause mood swings, bloating, and fatigue. Lifestyle changes and certain medications can help manage symptoms."
-    },
-    { 
-      icon: FaHeartbeat, 
-      title: "PCOS",
-      fact: "1 in 10 women have PCOS", 
-      detail: "Polycystic Ovary Syndrome affects hormones and metabolism. Early diagnosis and treatment can prevent long-term complications."
-    },
-    { 
-      icon: GiMedicines, 
-      title: "Iron Deficiency",
-      fact: "30% of women have iron-deficiency anemia", 
-      detail: "Iron deficiency can cause fatigue and weakness. Dietary changes and supplements can help boost iron levels."
-    },
-    { 
-      icon: MdMood, 
-      title: "Postpartum Depression",
-      fact: "20% of women experience postpartum depression", 
-      detail: "Postpartum depression is a serious condition that can affect new mothers. Support and treatment are available and essential."
-    },
-  ];
-
-  useEffect(() => {
-    if (stage === stages.length) {
-      // Journey complete, calculate final health impact
-      const totalImpact = decisions.reduce((sum, decision) => sum + decision.impact, 0);
-      setHealthScore(prev => Math.max(0, Math.min(100, prev + totalImpact)));
-    }
-  }, [stage, decisions]);
-
-  const handleCharacterSelect = (selectedCharacter) => {
-    setCharacter(selectedCharacter);
-    setStage(1);
-  };
-
-  const handleDecision = (option) => {
-    setDecisions([...decisions, option]);
-    setStage(stage + 1);
-    setHealthScore(prev => Math.max(0, Math.min(100, prev + option.impact)));
-  };
-
-  const renderCharacterSelection = () => (
-    <div className="flex justify-center space-x-4">
-      {characters.map((char, index) => (
-        <motion.div
-          key={index}
-          className="bg-white p-6 rounded-lg shadow-lg cursor-pointer"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => handleCharacterSelect(char)}
-        >
-          <h3 className="text-xl font-bold">{char.name}</h3>
-          <p>{char.age} years old</p>
-          <p>{char.occupation}</p>
-        </motion.div>
-      ))}
-    </div>
-  );
-
-  const renderStage = () => (
-    <div className="max-w-2xl mx-auto">
-      <h2 className="text-2xl font-bold mb-4">{stages[stage - 1].title}</h2>
-      <p className="mb-6">{stages[stage - 1].description}</p>
-      <div className="space-y-4">
-        {stages[stage - 1].options.map((option, index) => (
-          <motion.button
-            key={index}
-            className="w-full bg-purple-100 p-4 rounded-lg flex items-center justify-between"
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.98 }}
-            onClick={() => handleDecision(option)}
-          >
-            <span>{option.text}</span>
-            <option.icon className="text-2xl" />
-          </motion.button>
-        ))}
-      </div>
-    </div>
-  );
-
-  const renderSummary = () => (
-    <div className="max-w-2xl mx-auto text-center">
-      <h2 className="text-3xl font-bold mb-4">Journey Complete!</h2>
-      <p className="text-xl mb-4">
-        {character.name}, your final health score is: {healthScore}
-      </p>
-      <div className="mb-8">
-        <h3 className="text-2xl font-semibold mb-2">Your Decisions:</h3>
-        {decisions.map((decision, index) => (
-          <p key={index} className={decision.impact > 0 ? "text-green-600" : "text-red-600"}>
-            {decision.text} (Impact: {decision.impact})
-          </p>
-        ))}
-      </div>
-      <button
-        className="bg-purple-600 text-white px-6 py-3 rounded-full font-bold"
-        onClick={() => {
-          setStage(0);
-          setCharacter(null);
-          setDecisions([]);
-          setHealthScore(100);
-        }}
-      >
-        Start New Journey
-      </button>
-    </div>
-  );
-
-  const renderFactShowcase = () => (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {facts.map((fact, index) => (
-        <motion.div
-          key={index}
-          className="bg-white p-6 rounded-lg shadow-lg cursor-pointer"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => setActiveFact(activeFact === index ? null : index)}
-        >
-          <div className="flex items-center mb-4">
-            <fact.icon className="text-3xl text-purple-600 mr-4" />
-            <h3 className="text-xl font-bold">{fact.title}</h3>
-          </div>
-          <p className="font-semibold mb-2">{fact.fact}</p>
-          <AnimatePresence>
-            {activeFact === index && (
-              <motion.p
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="text-sm text-gray-600"
-              >
-                {fact.detail}
-              </motion.p>
-            )}
-          </AnimatePresence>
-        </motion.div>
-      ))}
-    </div>
-  );
-
-  return (
-    <section className="py-16 bg-gradient-to-br from-blue-50 to-purple-50">
-      <div className="container mx-auto px-4">
-        <motion.h1 
-          className="text-4xl font-bold text-center mb-12 text-purple-800"
+        <motion.h2 
+          className="text-5xl font-bold text-center mb-16 text-purple-800"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Women's Health: Journey & Facts
-        </motion.h1>
-        
-        <div className="flex justify-center mb-8">
-        <button
-            className={`mx-2 px-6 py-2 rounded-full font-bold ${mode === 'facts' ? 'bg-purple-600 text-white' : 'bg-purple-200 text-purple-800'}`}
-            onClick={() => setMode('facts')}
-          >
-            Health Facts
-          </button>
-          <button
-            className={`mx-2 px-6 py-2 rounded-full font-bold ${mode === 'journey' ? 'bg-purple-600 text-white' : 'bg-purple-200 text-purple-800'}`}
-            onClick={() => setMode('journey')}
-          >
-            Interactive Journey
-          </button>
-         
+          Explore Health Categories
+        </motion.h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
+          {categories.map((category, index) => (
+            <Link key={index} to={`/women-segment/disease/${category.link}`}>
+              <motion.div
+                className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="p-6 flex flex-col items-center" style={{ backgroundColor: `${category.color}20` }}>
+                  <category.icon className="text-5xl mb-4" style={{ color: category.color }} />
+                  <h3 className="text-xl font-semibold text-center" style={{ color: category.color }}>
+                    {category.title}
+                  </h3>
+                </div>
+              </motion.div>
+            </Link>
+          ))}
         </div>
-
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={mode}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.5 }}
-          >
-            {mode === 'journey' && (
-              <>
-                {stage === 0 && renderCharacterSelection()}
-                {stage > 0 && stage <= stages.length && renderStage()}
-                {stage > stages.length && renderSummary()}
-                {stage > 0 && stage <= stages.length && (
-                  <div className="mt-8 text-center">
-                    <p className="text-xl font-bold">Current Health Score: {healthScore}</p>
-                    <div className="w-full bg-gray-200 rounded-full h-2.5 mt-2">
-                      <div 
-                        className="bg-purple-600 h-2.5 rounded-full" 
-                        style={{width: `${healthScore}%`}}
-                      ></div>
-                    </div>
-                  </div>
-                )}
-              </>
-            )}
-            {mode === 'facts' && renderFactShowcase()}
-          </motion.div>
-        </AnimatePresence>
       </div>
     </section>
   );
 };
 
 
-const LifeStageTimeline = () => {
-  const [activeStage, setActiveStage] = useState(null);
 
-  const stages = [
-    { icon: FaFemale, title: "Adolescence", color: "#FF6B6B", description: "Crucial nutrients for growth and development" },
-    { icon: IoMdFlower, title: "Reproductive Years", color: "#4ECDC4", description: "Balanced diet for hormonal health and fertility" },
-    { icon: MdPregnantWoman, title: "Pregnancy", color: "#45B7D1", description: "Essential nutrients for fetal development" },
-    { icon: FaBaby, title: "Postpartum", color: "#F9DB6D", description: "Recovery and breastfeeding nutrition" },
-    { icon: RiMentalHealthLine, title: "Menopause", color: "#8A2BE2", description: "Diet to manage symptoms and maintain health" },
-  ];
-
+const IconBubble = ({ Icon, color, size, animate, isSelected, rotation }) => {
   return (
-    <div className="bg-gradient-to-br from-purple-100 to-pink-100 py-12 px-4 sm:px-6 lg:px-8">
-      <motion.h1
-        className="text-4xl sm:text-5xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        Women's Health Journey
-      </motion.h1>
-
-      <div className="max-w-7xl mx-auto">
-        <div className="relative">
-          <div className="absolute left-0 right-0 h-1 top-24 bg-gradient-to-r from-purple-300 to-pink-300 rounded-full hidden lg:block" />
-          
-          <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start">
-            {stages.map((stage, index) => (
-              <div key={index} className="relative mb-12 lg:mb-0 w-full lg:w-1/5">
-                <motion.div
-                  className={`w-20 h-20 rounded-full flex items-center justify-center cursor-pointer z-10 mx-auto
-                              shadow-lg transition-all duration-300 ease-in-out
-                              ${activeStage === index ? 'ring-4 ring-offset-4 ring-pink-500 scale-110' : ''}`}
-                  style={{ backgroundColor: stage.color }}
-                  onClick={() => setActiveStage(activeStage === index ? null : index)}
-                  whileHover={{ scale: 1.1, boxShadow: '0 0 25px rgba(0,0,0,0.3)' }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <stage.icon className="text-3xl text-white" />
-                </motion.div>
-                
-                <motion.h3 
-                  className="mt-5 font-semibold text-center text-gray-800"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.2 }}
-                >
-                  {stage.title}
-                </motion.h3>
-
-                <AnimatePresence>
-                  {activeStage === index && (
-                    <motion.div
-                      className="bg-white p-4 rounded-xl shadow-xl mt-4 mx-auto lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 w-full lg:w-64 z-20"
-                      style={{ 
-                        borderTop: `4px solid ${stage.color}`,
-                        top: 'calc(100% + 1rem)',
-                        left: "0%"
-                      }}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 20 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <h4 className="text-lg font-bold mb-2" style={{ color: stage.color }}>{stage.title}</h4>
-                      <p className="text-sm text-gray-700">{stage.description}</p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-        >
-          <motion.button
-            className="bg-gradient-to-r from-purple-500 to-pink-500 mt-24 text-white px-8 py-3 rounded-full font-semibold shadow-lg text-lg"
-            whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(0,0,0,0.2)' }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => setActiveStage(null)}
-          >
-            Reset Timeline
-          </motion.button>
-        </motion.div>
-      </div>
-    </div>
+    <motion.div
+      style={{
+        backgroundColor: color,
+        width: size,
+        height: size,
+        borderRadius: '50%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        transform: `rotate(${rotation}deg)`,
+        boxShadow: isSelected ? '0 0 15px rgba(0,0,0,0.3)' : 'none',
+      }}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+    >
+      <Icon size={size * 0.6} color="white" />
+    </motion.div>
   );
 };
-
-
 
 const NutritionWheel = () => {
   const [rotation, setRotation] = useState(0);
@@ -480,6 +170,7 @@ const NutritionWheel = () => {
   const [selectedFood, setSelectedFood] = useState(null);
   const wheelRef = useRef(null);
   const spinningRef = useRef(null);
+  const [, forceUpdate] = useReducer(x => x + 1, 0);
 
   const foods = [
     { name: "Fruits", icon: FaAppleAlt, color: "#FF6B6B", benefits: "Rich in vitamins, fiber, and antioxidants. Boost immune system and support heart health.", tip: "Include a variety of colorful fruits in your diet for diverse nutrients." },
@@ -514,6 +205,7 @@ const NutritionWheel = () => {
           repeat: Infinity,
           onUpdate: (latest) => {
             setRotation(latest);
+            forceUpdate();
           }
         }
       );
@@ -538,38 +230,51 @@ const NutritionWheel = () => {
       <div className="lg:w-1/2">
         <motion.div 
           ref={wheelRef}
-          className="w-96 h-96 mx-auto rounded-full border-4 border-gray-200 flex items-center justify-center relative"
-          style={{ rotate: rotation }}
+          className="w-96 h-96 mx-auto rounded-full flex items-center justify-center relative"
+          style={{ 
+            rotate: rotation,
+            backgroundColor: '#f0f0f0',
+            boxShadow: '0 0 20px rgba(0,0,0,0.1)'
+          }}
         >
           {foods.map((food, index) => (
-            <motion.div
+            <div
               key={index}
               className="absolute cursor-pointer"
               style={{
-                transform: `rotate(${index * (360 / foods.length)}deg) translateX(150px) rotate(-${index * (360 / foods.length)}deg)`,
+                transform: `rotate(${index * (360 / foods.length)}deg) translateX(150px)`,
               }}
-              onClick={() => handleIconClick(index)}
             >
-              <IconBubble 
-                Icon={food.icon} 
-                color={food.color} 
-                size={60} 
-                animate={false} 
-                isSelected={selectedFood && selectedFood.name === food.name}
-              />
-            </motion.div>
+              <div onClick={() => handleIconClick(index)}>
+                <IconBubble 
+                  Icon={food.icon} 
+                  color={food.color} 
+                  size={60} 
+                  animate={false} 
+                  isSelected={selectedFood && selectedFood.name === food.name}
+                  rotation={-rotation - index * (360 / foods.length)}
+                />
+              </div>
+            </div>
           ))}
           <motion.div
-            className="absolute w-24 h-24 bg-pink-500 rounded-full flex items-center justify-center cursor-pointer"
+            className="absolute w-24 h-24 bg-white rounded-full flex items-center justify-center cursor-pointer"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={handleSpin}
+            style={{
+              boxShadow: '0 0 15px rgba(0,0,0,0.1)',
+            }}
           >
-            <span className="text-white font-bold">{isSpinning ? "STOP" : "SPIN"}</span>
+            {isSpinning ? (
+              <FaPauseCircle size={40} color="#FF6B6B" />
+            ) : (
+              <FaUtensils size={40} color="#45B7D1" />
+            )}
           </motion.div>
         </motion.div>
       </div>
-      
+           
       <div className="lg:w-1/2 lg:pl-8">
         {selectedFood ? (
           <motion.div
@@ -596,24 +301,352 @@ const NutritionWheel = () => {
 };
 
 
+const TestimonialsSection = () => {
+  const testimonials = [
+    {
+      name: "Sarah L.",
+      quote:
+        "This app has completely transformed my relationship with food. I've never felt healthier!",
+      avatar: "👩‍🦰",
+      rating: 5,
+      profession: "Fitness Enthusiast",
+      achievement: "Lost 30 lbs in 3 months",
+    },
+    {
+      name: "Mike R.",
+      quote:
+        "The personalized meal plans are fantastic. I'm losing weight without feeling deprived.",
+      avatar: "👨‍🦲",
+      rating: 5,
+      profession: "Software Engineer",
+      achievement: "Gained 10 lbs of muscle",
+    },
+    {
+      name: "Emily T.",
+      quote:
+        "I love how easy it is to track my progress. It keeps me motivated to stick to my goals.",
+      avatar: "👩‍🦱",
+      rating: 4,
+      profession: "Teacher",
+      achievement: "Improved energy levels",
+    },
+    {
+      name: "John S.",
+      quote:
+        "Using this app helped me understand nutrition better. I feel more confident in my food choices now.",
+      avatar: "👨",
+      rating: 5,
+      profession: "Marketing Manager",
+      achievement: "Lowered cholesterol by 15%",
+    },
+    {
+      name: "Sophie M.",
+      quote:
+        "The support from the community in this app is incredible. It's like having a personal cheerleading squad!",
+      avatar: "👩",
+      rating: 5,
+      profession: "Graphic Designer",
+      achievement: "Completed first marathon",
+    },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
+
+  const handlePrev = () => {
+    setDirection(-1);
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length
+    );
+  };
+
+  const handleNext = () => {
+    setDirection(1);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+  };
+
+  return (
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 py-24 overflow-hidden"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <motion.h2
+          className="text-5xl font-extrabold text-center text-white mb-16"
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
+        >
+          Success Stories
+        </motion.h2>
+
+        <div className="relative">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, x: direction > 0 ? 300 : -300 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: direction > 0 ? -300 : 300 }}
+              transition={{ type: "tween", ease: "easeInOut", duration: 0.5 }}
+              className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 flex flex-col md:flex-row items-center"
+            >
+              <div className="mb-8 md:mb-0 md:mr-12 flex-shrink-0">
+                <motion.div
+                  className="text-8xl md:text-9xl"
+                  initial={{ scale: 0.5, rotate: -180 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 260,
+                    damping: 20,
+                    delay: 0.2,
+                  }}
+                >
+                  {testimonials[currentIndex].avatar}
+                </motion.div>
+              </div>
+              <div className="flex-grow">
+                <motion.div
+                  className="text-4xl text-indigo-600 mb-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <FaQuoteLeft />
+                </motion.div>
+                <motion.p
+                  className="text-2xl md:text-3xl text-gray-700 italic mb-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  {testimonials[currentIndex].quote}
+                </motion.p>
+                <motion.div
+                  className="text-4xl text-indigo-600 text-right mb-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                >
+                  <FaQuoteRight />
+                </motion.div>
+                <motion.div
+                  className="flex items-center justify-between"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 }}
+                >
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900">
+                      {testimonials[currentIndex].name}
+                    </h3>
+                    <p className="text-lg text-gray-600">
+                      {testimonials[currentIndex].profession}
+                    </p>
+                  </div>
+                  <div className="flex items-center">
+                    {[...Array(testimonials[currentIndex].rating)].map(
+                      (_, i) => (
+                        <FaStar key={i} className="text-yellow-400 text-2xl" />
+                      )
+                    )}
+                  </div>
+                </motion.div>
+                <motion.div
+                  className="mt-4 bg-indigo-100 rounded-full px-4 py-2 inline-block"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.7 }}
+                >
+                  <span className="text-indigo-800 font-semibold">
+                    {testimonials[currentIndex].achievement}
+                  </span>
+                </motion.div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          <button
+            onClick={handlePrev}
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1/2 bg-white rounded-full p-4 shadow-lg focus:outline-none"
+          >
+            <FaChevronLeft className="text-2xl text-indigo-600" />
+          </button>
+          <button
+            onClick={handleNext}
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1/2 bg-white rounded-full p-4 shadow-lg focus:outline-none"
+          >
+            <FaChevronRight className="text-2xl text-indigo-600" />
+          </button>
+        </div>
+
+        <div className="mt-12 flex justify-center space-x-2">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-3 h-3 rounded-full ${
+                index === currentIndex ? "bg-white" : "bg-white bg-opacity-50"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    </motion.section>
+  );
+};
+
+const FAQSection = () => {
+  const faqs = [
+    {
+      question: "How does the personalized meal plan work?",
+      answer:
+        "Our AI analyzes your health goals, dietary preferences, and lifestyle to create a tailored meal plan just for you.",
+    },
+    {
+      question: "Can I change my meal plan?",
+      answer:
+        "Absolutely! You can customize your meal plan at any time to fit your changing needs and preferences.",
+    },
+    {
+      question: "Is the app suitable for people with dietary restrictions?",
+      answer:
+        "Yes, our app caters to various dietary needs including vegetarian, vegan, gluten-free, and more.",
+    },
+    {
+      question: "How often should I update my progress?",
+      answer:
+        "We recommend updating your progress weekly for the best results and most accurate adjustments to your plan.",
+    },
+    {
+      question: "What is BMI (Body Mass Index)?",
+      answer:
+        "BMI is a measurement that indicates whether you are underweight, normal weight, overweight, or obese based on your height and weight.",
+    },
+    {
+      question: "How can I improve my BMI?",
+      answer:
+        "You can improve your BMI by maintaining a balanced diet, exercising regularly, and monitoring your weight consistently.",
+    },
+    {
+      question: "What is BMR (Basal Metabolic Rate)?",
+      answer:
+        "BMR is the number of calories your body needs to maintain basic physiological functions while at rest.",
+    },
+    {
+      question: "How can I calculate my BMR?",
+      answer:
+        "You can use online BMR calculators that consider factors like age, gender, weight, and height to estimate your BMR.",
+    },
+    {
+      question: "Why is BMR important?",
+      answer:
+        "BMR helps determine your daily calorie needs, which is crucial for weight management and maintaining a healthy metabolism.",
+    },
+    {
+      question: "What is body fat percentage?",
+      answer:
+        "Body fat percentage is the proportion of fat tissue to lean tissue in your body. It is an important indicator of overall health and fitness.",
+    },
+    {
+      question: "How can I reduce body fat percentage?",
+      answer:
+        "Reducing body fat percentage involves a combination of regular exercise, a balanced diet, and maintaining a calorie deficit.",
+    },
+    {
+      question: "What is considered a healthy body fat percentage?",
+      answer:
+        "Healthy body fat percentage ranges vary by age and gender, but generally, lower body fat percentages are associated with better health outcomes.",
+    },
+  ];
+  const [openIndex, setOpenIndex] = useState(null);
+
+  return (
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="bg-gradient-to-b from-white to-gray-50 py-24"
+    >
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.h2
+          className="text-5xl font-extrabold text-center text-gray-900 mb-16"
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
+        >
+          Frequently Asked Questions
+        </motion.h2>
+        <div className="mt-20 space-y-8">
+          {faqs.map((faq, index) => (
+            <motion.div
+              key={index}
+              className="bg-white rounded-2xl shadow-xl overflow-hidden"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 50,
+                delay: 0.4 + index * 0.1,
+              }}
+            >
+              <motion.button
+                className="w-full text-left p-6 focus:outline-none"
+                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+              >
+                <div className="flex justify-between items-center">
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    {faq.question}
+                  </h3>
+                  <motion.div
+                    animate={{ rotate: openIndex === index ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <FaChevronDown className="text-2xl text-indigo-500" />
+                  </motion.div>
+                </div>
+              </motion.button>
+              <AnimatePresence>
+                {openIndex === index && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <p className="text-gray-600 text-lg p-6 pt-0">
+                      {faq.answer}
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </motion.section>
+  );
+};
 
 const WHome = () => {
   return (
     <div className="overflow-hidden bg-white">
-      <WNavbar />
+<WNavbar />
+<WellnessCompanion />
       <WHero />
-      <WomenLifecycle />
+      <LifeStageTimeline />
       <HealthCategories />
-      <HealthJourneyAndFacts />
-      
-      <section className="m-0">
-        <LifeStageTimeline />
-      </section>
-      
       <section className="py-20 px-4 bg-gray-50">
         <h2 className="text-4xl font-bold mb-10 text-center">Balanced Nutrition</h2>
         <NutritionWheel />
       </section>
+      <FAQSection />
+      <TestimonialsSection />
+
+      
+    
       
       <footer className="bg-gray-800 text-white py-12">
         <div className="container mx-auto px-4 text-center">
@@ -631,21 +664,6 @@ const WHome = () => {
   );
 };
 
-// Updated IconBubble component
-const IconBubble = ({ Icon, color, size, animate = false, isSelected }) => {
-  return (
-    <div
-      className={`rounded-full flex items-center justify-center ${isSelected ? 'ring-2 ring-offset-2' : ''}`}
-      style={{
-        backgroundColor: color,
-        width: size,
-        height: size,
-        boxShadow: isSelected ? `0 0 10px ${color}` : 'none'
-      }}
-    >
-      <Icon className="text-white" style={{ fontSize: size * 0.5 }} />
-    </div>
-  );
-};
+
 
 export default WHome;

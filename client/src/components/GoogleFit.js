@@ -29,7 +29,7 @@ import { MdDirectionsBike, MdRestaurant } from "react-icons/md";
 import { RiMentalHealthLine, RiZzzFill } from "react-icons/ri";
 
 const CLIENT_ID =
-  "184049031723-redoko70g7841r859r2clepf4u1j2mf2.apps.googleusercontent.com";
+  "193271703266-t0bfa4k574678phcmottkdo9o1n03ee9.apps.googleusercontent.com";
 const API_KEY = "AIzaSyDSX0idNMfwwq29vs_2lvJNKevleYSa44Y";
 const DISCOVERY_DOC =
   "https://www.googleapis.com/discovery/v1/apis/fitness/v1/rest";

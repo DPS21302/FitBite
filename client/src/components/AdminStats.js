@@ -155,32 +155,32 @@ const AdminStats = () => {
                 <StatCard
                   icon={FaWeight}
                   title="Avg BMR"
-                  value={bmrStats ? bmrStats.averageBMR.toFixed(2) : "N/A"}
+                  value={bmrStats ? bmrStats?.averageBMR?.toFixed(2) : "N/A"}
                   color="green"
                 />
                 <StatCard
                   icon={FaFireAlt}
                   title="Min BMR"
-                  value={bmrStats ? bmrStats.minBMR.toFixed(2) : "N/A"}
+                  value={bmrStats ? bmrStats?.minBMR?.toFixed(2) : "N/A"}
                   color="orange"
                 />
                 <StatCard
                   icon={FaPercent}
                   title="Max BMR"
-                  value={bmrStats ? bmrStats.maxBMR.toFixed(2) : "N/A"}
+                  value={bmrStats ? bmrStats?.maxBMR?.toFixed(2) : "N/A"}
                   color="purple"
                 />
                 <StatCard
                   icon={FaWeight}
                   title="Avg BMI"
-                  value={bmiStats ? bmiStats.averageBMI.toFixed(2) : "N/A"}
+                  value={bmiStats ? bmiStats?.averageBMI?.toFixed(2) : "N/A"}
                   color="green"
                 />
                 <StatCard
                   icon={FaPercent}
                   title="Avg Body Fat"
                   value={
-                    bodyFatStats ? bodyFatStats.averageBodyFat.toFixed(2) : "N/A"
+                    bodyFatStats ? bodyFatStats?.averageBodyFat?.toFixed(2) : "N/A"
                   }
                   color="purple"
                 />

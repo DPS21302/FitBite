@@ -33,7 +33,7 @@ const BMICalculator = () => {
   const [bmiHistory, setBmiHistory] = useState([]);
   const [showAdvancedInfo, setShowAdvancedInfo] = useState(false);
   const chartRef = useRef(null);
-
+  
   useEffect(() => {
     if (user !== undefined) {
       setIsLoading(false);
@@ -65,12 +65,7 @@ const BMICalculator = () => {
   };
 
   const handleSubmit = async (values, { setSubmitting, setFieldError }) => {
-    if (!isLoggedIn) {
-      toast.error("You must be logged in to submit your BMI data.");
-      setSubmitting(false);
-      navigate("/login");
-      return;
-    }
+
 
     const { weight, height } = values;
     const bmi = calculateBMI(weight, height);
